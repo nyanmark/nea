@@ -1,1 +1,1 @@
-# nea
+# Nea Project Computer Science
