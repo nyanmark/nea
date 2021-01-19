@@ -1,1 +1,29 @@
-# Nea Project Computer Science
+Choir Website
+
+My client has approached me with an issue. He needs a centralised system to track the performance’s of his choir. A few issues he has presented to me is that it needs to be accessible from the members home and needs to send out notifications to the members, therefore we had agreed on a website with an email system allow email notifications to be sent out to the choir members.
+
+The requirements I had agreed on with my client would include:
+
+    • A membership system
+    • Tracking voice type (Soprano – Bass)
+    • Tracking events
+    • Storing choir membership
+    • Event sign ups
+    • Web page with secure login
+
+This task would require a smart approach to reach all the requirements me and my client have discussed leading to some requirements I had come up with listed below. Furthermore considerations have to be taken on how to approach this issue of making an easily accessible website for all the choir member such as needing a domain for the website and a web server.  For the duration of this project I will be using a free subdomain and host the project on a web server I have until I hand it over to the client allowing him to set his own parameters for the website and email sending. 
+
+All of the requirements above come with a few objectives:
+
+    • A system which people with a lack of technical knowledge can use
+    • Security users must log in to use the website
+    • Overrides for the choir leader / admin 
+    • Event selection and limits, system would output to the choir leader the voice types, quantity of those signed up for the event, the system would also chose those with the least performances if too many have opted in for an event.
+
+Such requirements and objective have lead me to chose python as my program of choice using the flask library built into python allowing it to interface with html web pages. I have chosen python because I prefer it to php and it provides me greater flexibility whilst setting up a system utilising a database to drive a web front end application. Furthermore it can easily integrate notification systems such as SMTP email sending and web hooks allowing it to notify choir members. I will be using uWSGI allowing python to interface with an Nginx web server allowing the web pages to be accessible from the internet on the choir website.
+
+The database will be an integral part of my project as it would have to store all the members, logins and details for the system to function properly this would mean I have to employ proper table structure to make my database efficient. I have decided that there would be a table within the database for the members including their name, surname, email, password, voice type and quantity of events participated. Furthermore there will be a table for the events including the date, amount of slots and the location with another table for the event entries featuring the choir members who have entered having their first and last name, email and voice type. This will allow the choir master to see which people are in an event and how many of each voice type allowing him/her to alter the members as needed. Additionally the quantity of events participated which will be increased every time a user has been approved for an event and a notification has been sent out will be integral for the system in choosing users when there have been too many entries for an event allowing it to select those with the least performances.
+
+For the web front end there will be simple html web pages with all the appropriate tabs. The web page list I had decided on is having an index home page, a registration page, a log in page, a personal info page allowing users to edit their email or password, an events page and an administrator page for the choir leader allowing them to edit user details, approve event sign ups, alter and overwrite members entered to an event and delete users. Furthermore the administration page will include SMTP setting for email sending allowing my customer to alter the email domain for his requirements.
+
+The python back end will be central for the system to work as it would be running the link between the website and database and providing function for user notifications such as SMTP giving the customer the option of using the python or any external server for mail sending. This whole system would then interface with an Nginx API allowing it to run in conjunction with the python program.
