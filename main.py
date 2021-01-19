@@ -1,10 +1,12 @@
+from mysql import connector
 from flask import Flask, redirect, url_for, render_template, request, session, flash
 from datetime import timedelta
 from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
 app.secret_key = "D4Lgt4T6ALnDzJjRi9"
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///website.sqlite3'
+app.config['SQLALCHEMY_DATABASE_URI'] = \
+    'mysql+mysqlconnector://website@nea:p97iiFq2@nea.mysql.database.azure.com/website'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.permanent_session_lifetime = timedelta(hours=12)
 
