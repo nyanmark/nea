@@ -16,11 +16,13 @@ db = SQLAlchemy(app)
 class users(db.Model):
     _id = db.Column("id", db.Integer, primary_key=True)
     name = db.Column("name", db.String(100))
-    email = db.Column("name", db.String(100))
+    email = db.Column("email", db.String(100))
+    password = db.Column("password", db.String(100))
 
-    def __init__(self, name, email):
+    def __init__(self, name, email, password):
         self.name = name
         self.email = email
+        self.password = password
 
 
 @app.route("/")
@@ -28,13 +30,35 @@ def index():
     return render_template("index.html")
 
 
+@app.route("/register", methods=["POST", "GET"])
+def register():
+    if request.method == "POST":
+        name = request.form["name"]
+        password = request.form["password"]
+        email = request.form["email"]
+        session["name"] = name
+        session["password"] = password
+        session["email"] = email
+        flash(f"Registration Successful {name}", "info")
+        return redirect(url_for("members"))
+    else:
+        if "user" in session:
+            flash(f"You are already a user {name}", "info")
+            return redirect(url_for("members"))
+        return render_template("register.html")
+
+
 @app.route("/login", methods=["POST", "GET"])
 def login():
     if request.method == "POST":
-        session.permanent = True
-        user = request.form["name"]
-        session["user"] = user
-        flash(f"Login Successful {user}", "info")
+        checkbox = request.form["checkbox"]
+        if checkbox:
+            session.permanent = True
+        password = request.form["password"]
+        email = request.form["email"]
+        session["password"] = password
+        session["email"] = email
+        flash(f"Login Successful {name}", "info")
         return redirect(url_for("members"))
     else:
         if "user" in session:
@@ -70,14 +94,14 @@ def logout():
     return redirect(url_for("index"))
 
 
-@app.route("/register")
-def register():
-    return render_template("register.html")
-
-
 @app.route("/events")
 def events():
     return render_template("events.html")
+
+
+@app.route("/gallery")
+def gallery():
+    return render_template("gallery.html")
 
 
 @app.route("/admin")
