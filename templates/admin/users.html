@@ -1,0 +1,33 @@
+{% extends "admin/base.html" %}
+{% block title %}Administration{% endblock %}
+{% block content %}
+<main class="page">
+    <section class="clean-block">
+        <div class="text">
+                <br>
+                <h2><strong><em>Users</em></strong></h2>
+                <br>
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>User</th>
+                                <th>Email</th>
+                                <th>Voice</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        {% for item in values %}
+                            <tr>
+                                <td>{{item.name}}</td>
+                                <td>{{item.email}}</td>
+                                <td>{{item.voice}}</td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+    </section>
+</main>
+{% endblock %}

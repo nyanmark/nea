@@ -11,6 +11,9 @@ app.config['SQLALCHEMY_DATABASE_URI'] = \
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.permanent_session_lifetime = timedelta(hours=12)
 
+home_img_url = 'https://nyanmark.github.io/nea/img/choir.jpg'
+gallery_img_url = 'https://nyanmark.github.io/nea/img/image1.jpg'
+
 db = SQLAlchemy(app)
 
 
@@ -18,16 +21,27 @@ class users(db.Model):
     name = db.Column("name", db.String(100))
     email = db.Column("email", db.String(100), primary_key=True)
     password = db.Column("password", db.String(100))
+    voice = db.Column("voice", db.String(10))
 
-    def __init__(self, name, email, password):
+    def __init__(self, name, email, password, voice):
         self.name = name
         self.email = email
         self.password = password
+        self.voice = voice
+
+
+class gallery(db.Model):
+    _id = db.Column("_id", db.Integer(), primary_key=True)
+    url = db.Column("url", db.String(200))
+
+    def __init__(self, _id, url):
+        self._id = _id
+        self.url = url
 
 
 @app.route("/")
 def index():
-    return render_template("index.html")
+    return render_template("index.html", main_url=home_img_url)
 
 
 @app.route("/register", methods=["POST", "GET"])
@@ -37,13 +51,14 @@ def register():
         email = data['u-mail']
         password = data['u-pass']
         name = data['u-name']
+        voice = data['u-voice']
         session['email'] = email
         found_user = users.query.filter_by(email=email).first()
         if found_user:
             flash(f"Please Try again, Email already in use", "info")
             return render_template("register.html")
         else:
-            usr = users(name, email, password)
+            usr = users(name, email, password, voice)
             db.session.add(usr)
             db.session.commit()
             flash(f"Registration Successful {name}", "info")
@@ -103,12 +118,29 @@ def events():
 
 @app.route("/gallery")
 def gallery():
-    return render_template("gallery.html")
+    var_num = gallery.query.all().count() + 1
+    return render_template("gallery.html", values=gallery.query.all(), main_url=gallery_img_url, num=var_num)
 
 
 @app.route("/admin")
 def admin():
-    return render_template("admin.html", values=users.query.all())
+    return render_template("admin/admin.html")
+
+
+@app.route("/admin/users")
+def admin_users():
+    return render_template("admin/users.html", values=users.query.all())
+
+
+@app.route("/admin/gallery")
+def admin_gallery():
+    return render_template("admin/gallery.html", values=gallery.query.all())
+
+
+@app.route("/admin/events")
+def admin_events():
+    return render_template("admin/events.html", values=events.query.all())
+
 
 
 if __name__ == '__main__':
