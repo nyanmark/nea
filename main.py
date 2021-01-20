@@ -6,7 +6,8 @@ from flask_sqlalchemy import SQLAlchemy
 app = Flask(__name__)
 app.secret_key = "D4Lgt4T6ALnDzJjRi9"
 app.config['SQLALCHEMY_DATABASE_URI'] = \
-    'mysql+mysqlconnector://website@nea:p97iiFq2@nea.mysql.database.azure.com/website'
+    'sqlite:///website.sql'
+#mysql+mysqlconnector://website@nea:p97iiFq2@nea.mysql.database.azure.com/website
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.permanent_session_lifetime = timedelta(hours=12)
 
@@ -14,9 +15,8 @@ db = SQLAlchemy(app)
 
 
 class users(db.Model):
-    _id = db.Column("id", db.Integer, primary_key=True)
     name = db.Column("name", db.String(100))
-    email = db.Column("email", db.String(100))
+    email = db.Column("email", db.String(100), primary_key=True)
     password = db.Column("password", db.String(100))
 
     def __init__(self, name, email, password):
@@ -33,18 +33,21 @@ def index():
 @app.route("/register", methods=["POST", "GET"])
 def register():
     if request.method == "POST":
-        name = request.form["name"]
-        password = request.form["password"]
-        email = request.form["email"]
-        session["name"] = name
-        session["password"] = password
-        session["email"] = email
-        flash(f"Registration Successful {name}", "info")
-        return redirect(url_for("members"))
-    else:
-        if "user" in session:
-            flash(f"You are already a user {name}", "info")
+        data = request.form
+        email = data['u-mail']
+        password = data['u-pass']
+        name = data['u-name']
+        session['email'] = email
+        found_user = users.query.filter_by(email=email).first()
+        if found_user:
+            flash(f"Please Try again, Email already in use", "info")
+            return render_template("register.html")
+        else:
+            usr = users(name, email, password)
+            db.session.add(usr)
+            flash(f"Registration Successful {name}", "info")
             return redirect(url_for("members"))
+    else:
         return render_template("register.html")
 
 
