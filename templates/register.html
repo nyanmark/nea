@@ -6,7 +6,7 @@
         <div class="container">
             <div class="block-heading">
                 <h2 class="text-info">Registration</h2>
-                <h4 class="text-body">
+                <h5 class="text-body">
                     {% with messages = get_flashed_messages() %}
                         {% if messages %}
                             {% for msg in messages %}
@@ -14,7 +14,7 @@
                             {% endfor %}
                         {% endif %}
                     {% endwith %}
-                </h4>
+                </h5>
             </div>
             <form method="post">
                 <div class="form-group">

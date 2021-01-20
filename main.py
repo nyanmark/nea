@@ -7,7 +7,7 @@ app = Flask(__name__)
 app.secret_key = "D4Lgt4T6ALnDzJjRi9"
 app.config['SQLALCHEMY_DATABASE_URI'] = \
     'sqlite:///website.sql'
-#mysql+mysqlconnector://website@nea:p97iiFq2@nea.mysql.database.azure.com/website
+# mysql+mysqlconnector://website@nea:p97iiFq2@nea.mysql.database.azure.com/website
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.permanent_session_lifetime = timedelta(hours=12)
 
@@ -45,6 +45,7 @@ def register():
         else:
             usr = users(name, email, password)
             db.session.add(usr)
+            db.session.commit()
             flash(f"Registration Successful {name}", "info")
             return redirect(url_for("members"))
     else:
@@ -54,17 +55,25 @@ def register():
 @app.route("/login", methods=["POST", "GET"])
 def login():
     if request.method == "POST":
-        checkbox = request.form["checkbox"]
-        if checkbox:
-            session.permanent = True
-        password = request.form["password"]
-        email = request.form["email"]
-        session["password"] = password
-        session["email"] = email
-        flash(f"Login Successful {name}", "info")
+        # noinspection PyBroadException
+        try:
+            checkbox = request.form["u-save"]
+            if checkbox == "on":
+                session.permanent = True
+        except:
+            session.permanent = False
+        password = request.form["u-pass"]
+        email = request.form["u-mail"]
+        db_query = users.query.filter_by(email=email).first()
+        name = db_query.name
+        if db_query.password == password:
+            session["email"] = email
+            flash(f"Login Successful {name}", "info")
+        else:
+            flash(f"Password Incorrect", "info")
         return redirect(url_for("members"))
     else:
-        if "user" in session:
+        if "email" in session:
             flash(f"Already Logged In", "info")
             return redirect(url_for("members"))
         return render_template("login.html")
@@ -72,27 +81,17 @@ def login():
 
 @app.route("/members", methods=["POST", "GET"])
 def members():
-    email = None
-    if "user" in session:
-        user = session["user"]
-        if request.method == "POST":
-            email = request.form["email"]
-            session["email"] = email
-            flash("Email was saved!")
-        else:
-            if "email" in session:
-                email = session["email"]
-        return render_template("members.html", user=user, email=email)
+    if "email" in session:
+        return render_template("members.html")
     else:
         return redirect(url_for("login"))
 
 
 @app.route("/logout")
 def logout():
-    if "user" in session:
-        user = session["user"]
-        flash(f"You have been logged out, {user}", "info")
-    session.pop("user", None)
+    if "email" in session:
+        email = session["email"]
+        flash(f"You have been logged out", "info")
     session.pop("email", None)
     return redirect(url_for("index"))
 
@@ -109,7 +108,7 @@ def gallery():
 
 @app.route("/admin")
 def admin():
-    return render_template("admin.html")
+    return render_template("admin.html", values=users.query.all())
 
 
 if __name__ == '__main__':

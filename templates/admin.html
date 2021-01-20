@@ -1,3 +1,14 @@
 {% extends "base.html" %}
 {% block title %}Administration{% endblock %}
-{% block content %}<h1>BEST WEBSITE</h1>{% endblock %}
+{% block content %}
+<main class="page">
+    <section class="clean-block">
+        <div class="text">
+            <h2>BEST WEBSITE</h2>
+            {% for item in values %}
+                <p>User: {{item.name}}, Email: {{item.email}}</p>
+            {% endfor %}
+        </div>
+    </section>
+</main>
+{% endblock %}
