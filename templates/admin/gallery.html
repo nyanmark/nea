@@ -15,12 +15,12 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td>Home Page</td>
-                            <td>google</td>
+                            <td>Home Page (999)</td>
+                            <td>{{home_img_url}}</td>
                         </tr>
                         <tr>
-                            <td>Gallery Front</td>
-                            <td>yandex</td>
+                            <td>Gallery Page (998)</td>
+                            <td>{{gallery_img_url}}</td>
                         </tr>
                     {% for item in values %}
                         <tr>
@@ -33,24 +33,33 @@
             </div>
         </div>
         <div class="block-heading">
-                <h5 class="text-body">
-                    {% with messages = get_flashed_messages() %}
-                        {% if messages %}
-                            {% for msg in messages %}
-                                {{msg}}
-                            {% endfor %}
-                        {% endif %}
-                    {% endwith %}
-                </h5>
-            </div>
+            <h5 class="text-body">
+                {% with messages = get_flashed_messages() %}
+                    {% if messages %}
+                        {% for msg in messages %}
+                            {{msg}}
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+            </h5>
+        </div>
         <div class="form-group">
             <form method="post">
                 <div class="form-group">
-                    <label for="em">Email</label>
-                    <input class="form-control item" type="email" id="em" name="u-mail">
+                    <label for="img_id">ID (Ignore for new Images)</label>
+                    <input class="form-control item" type="number" id="img_id" name="i-id">
+                </div>
+                <div class="form-group">
+                    <label for="img_url">URL</label>
+                    <input class="form-control item" type="url" id="img_url" name="i-url">
                 </div>
                 <div class="btn-group">
-                    <button class="btn btn-primary" type="button">Delete User</button>
+                    <button class="btn btn-primary" type="button">Edit Image</button>
+<!--                    <button class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-expanded="false" type="button"></button>-->
+<!--                        <div class="dropdown-menu">-->
+<!--                            <a class="dropdown-item">Add Image</a>-->
+<!--                            <a class="dropdown-item">Delete Image</a>-->
+<!--                        </div>-->
                 </div>
             </form>
         </div>

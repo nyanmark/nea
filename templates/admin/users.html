@@ -27,16 +27,16 @@
             </div>
         </div>
         <div class="block-heading">
-                <h5 class="text-body">
-                    {% with messages = get_flashed_messages() %}
-                        {% if messages %}
-                            {% for msg in messages %}
-                                {{msg}}
-                            {% endfor %}
-                        {% endif %}
-                    {% endwith %}
-                </h5>
-            </div>
+            <h5 class="text-body">
+                {% with messages = get_flashed_messages() %}
+                    {% if messages %}
+                        {% for msg in messages %}
+                            {{msg}}
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+            </h5>
+        </div>
         <div class="form-group">
             <form method="post">
                 <div class="form-group">

@@ -17,12 +17,11 @@ gallery_img_url = 'https://nyanmark.github.io/nea/img/image1.jpg'
 db = SQLAlchemy(app)
 
 
-class gallery(db.Model):
-    _id = db.Column("_id", db.Integer(), primary_key=True)
-    url = db.Column("url", db.String(200))
+class images(db.Model):
+    _id = db.Column("id", db.Integer, primary_key=True)
+    url = db.Column("url", db.String(100))
 
-    def __init__(self, _id, url):
-        self._id = _id
+    def __init__(self, url):
         self.url = url
 
 
@@ -118,10 +117,10 @@ def events():
     return render_template("events.html")
 
 
-@app.route("/gallery")
-def gallery():
-    var_num = gallery.query.all().count() + 1
-    return render_template("gallery.html", values=gallery.query.all(), main_url=gallery_img_url, num=var_num)
+# @app.route("/gallery")
+# def gallery():
+#     var_num = gallery.query.all().count() + 1
+#     return render_template("gallery.html", values=gallery.query.all(), main_url=gallery_img_url, num=var_num)
 
 
 @app.route("/admin")
@@ -145,9 +144,14 @@ def admin_users():
         return render_template("admin/users.html", values=users.query.all())
 
 
-@app.route("/admin/gallery")
+@app.route("/admin/gallery", methods=["POST", "GET"])
 def admin_gallery():
-    return render_template("admin/gallery.html", values=gallery.query.all())
+    if request.method == "POST":
+        return render_template("admin/gallery.html", values=images.query.all(),
+                               home_img_url=home_img_url, gallery_img_url=gallery_img_url)
+    else:
+        return render_template("admin/gallery.html", values=images.query.all(),
+                               home_img_url=home_img_url, gallery_img_url=gallery_img_url)
 
 
 @app.route("/admin/events")
