@@ -17,19 +17,6 @@ gallery_img_url = 'https://nyanmark.github.io/nea/img/image1.jpg'
 db = SQLAlchemy(app)
 
 
-class users(db.Model):
-    name = db.Column("name", db.String(100))
-    email = db.Column("email", db.String(100), primary_key=True)
-    password = db.Column("password", db.String(100))
-    voice = db.Column("voice", db.String(10))
-
-    def __init__(self, name, email, password, voice):
-        self.name = name
-        self.email = email
-        self.password = password
-        self.voice = voice
-
-
 class gallery(db.Model):
     _id = db.Column("_id", db.Integer(), primary_key=True)
     url = db.Column("url", db.String(200))
@@ -37,6 +24,21 @@ class gallery(db.Model):
     def __init__(self, _id, url):
         self._id = _id
         self.url = url
+
+
+class users(db.Model):
+    name = db.Column("name", db.String(100))
+    email = db.Column("email", db.String(100), primary_key=True)
+    password = db.Column("password", db.String(100))
+    voice = db.Column("voice", db.String(10))
+    is_admin = db.Column("is_admin", db.Boolean())
+
+    def __init__(self, name, email, password, voice, is_admin):
+        self.name = name
+        self.email = email
+        self.password = password
+        self.voice = voice
+        self.is_admin = is_admin
 
 
 @app.route("/")
@@ -58,7 +60,7 @@ def register():
             flash(f"Please Try again, Email already in use", "info")
             return render_template("register.html")
         else:
-            usr = users(name, email, password, voice)
+            usr = users(name, email, password, voice, None)
             db.session.add(usr)
             db.session.commit()
             flash(f"Registration Successful {name}", "info")
@@ -127,9 +129,20 @@ def admin():
     return render_template("admin/admin.html")
 
 
-@app.route("/admin/users")
+@app.route("/admin/users", methods=["POST", "GET"])
 def admin_users():
-    return render_template("admin/users.html", values=users.query.all())
+    if request.method == "POST":
+        email = request.form["u-mail"]
+        found_user = users.query.filter_by(email=email).first()
+        if found_user:
+            db.session.delete(found_user)
+            db.session.commit()
+            flash(f"User Deleted", "info")
+        else:
+            flash(f"No Such User", "info")
+        return render_template("admin/users.html", values=users.query.all())
+    else:
+        return render_template("admin/users.html", values=users.query.all())
 
 
 @app.route("/admin/gallery")
@@ -140,7 +153,6 @@ def admin_gallery():
 @app.route("/admin/events")
 def admin_events():
     return render_template("admin/events.html", values=events.query.all())
-
 
 
 if __name__ == '__main__':

@@ -1,10 +1,59 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-
-</body>
-</html>
+{% extends "admin/base.html" %}
+{% block title %}Administration{% endblock %}
+{% block content %}
+<main class="page contact-us-page">
+    <section class="clean-block clean-form dark"><br>
+        <div class="text">
+            <h2><strong><em>Gallery</em></strong></h2>
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>URL</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Home Page</td>
+                            <td>google</td>
+                        </tr>
+                        <tr>
+                            <td>Gallery Front</td>
+                            <td>yandex</td>
+                        </tr>
+                    {% for item in values %}
+                        <tr>
+                            <td>{{item.name}}</td>
+                            <td>{{item.email}}</td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="block-heading">
+                <h5 class="text-body">
+                    {% with messages = get_flashed_messages() %}
+                        {% if messages %}
+                            {% for msg in messages %}
+                                {{msg}}
+                            {% endfor %}
+                        {% endif %}
+                    {% endwith %}
+                </h5>
+            </div>
+        <div class="form-group">
+            <form method="post">
+                <div class="form-group">
+                    <label for="em">Email</label>
+                    <input class="form-control item" type="email" id="em" name="u-mail">
+                </div>
+                <div class="btn-group">
+                    <button class="btn btn-primary" type="button">Delete User</button>
+                </div>
+            </form>
+        </div>
+    </section>
+</main>
+{% endblock %}

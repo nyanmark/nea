@@ -1,33 +1,53 @@
 {% extends "admin/base.html" %}
 {% block title %}Administration{% endblock %}
 {% block content %}
-<main class="page">
-    <section class="clean-block">
+<main class="page contact-us-page">
+    <section class="clean-block clean-form dark"><br>
         <div class="text">
-                <br>
-                <h2><strong><em>Users</em></strong></h2>
-                <br>
-                <div class="table-responsive">
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th>User</th>
-                                <th>Email</th>
-                                <th>Voice</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                        {% for item in values %}
-                            <tr>
-                                <td>{{item.name}}</td>
-                                <td>{{item.email}}</td>
-                                <td>{{item.voice}}</td>
-                            </tr>
-                        {% endfor %}
-                        </tbody>
-                    </table>
-                </div>
+            <h2><strong><em>Users</em></strong></h2>
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>User</th>
+                            <th>Email</th>
+                            <th>Voice</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    {% for item in values %}
+                        <tr>
+                            <td>{{item.name}}</td>
+                            <td>{{item.email}}</td>
+                            <td>{{item.voice}}</td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
             </div>
+        </div>
+        <div class="block-heading">
+                <h5 class="text-body">
+                    {% with messages = get_flashed_messages() %}
+                        {% if messages %}
+                            {% for msg in messages %}
+                                {{msg}}
+                            {% endfor %}
+                        {% endif %}
+                    {% endwith %}
+                </h5>
+            </div>
+        <div class="form-group">
+            <form method="post">
+                <div class="form-group">
+                    <label for="em">Email</label>
+                    <input class="form-control item" type="email" id="em" name="u-mail">
+                </div>
+                <div class="btn-group">
+                    <button class="btn btn-primary" type="button">Delete User</button>
+                </div>
+            </form>
+        </div>
     </section>
 </main>
 {% endblock %}
