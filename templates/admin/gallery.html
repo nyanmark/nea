@@ -24,8 +24,8 @@
                         </tr>
                     {% for item in values %}
                         <tr>
-                            <td>{{item.name}}</td>
-                            <td>{{item.email}}</td>
+                            <td>{{item._id}}</td>
+                            <td>{{item.url}}</td>
                         </tr>
                     {% endfor %}
                     </tbody>
@@ -46,20 +46,20 @@
         <div class="form-group">
             <form method="post">
                 <div class="form-group">
-                    <label for="img_id">ID (Ignore for new Images)</label>
-                    <input class="form-control item" type="number" id="img_id" name="i-id">
+                    <label for="img-id">ID (Ignore for new Images)</label>
+                    <input class="form-control item" type="number" id="img-id" name="i-id">
                 </div>
                 <div class="form-group">
-                    <label for="img_url">URL</label>
-                    <input class="form-control item" type="url" id="img_url" name="i-url">
+                    <label for="img-url">URL</label>
+                    <input class="form-control item" type="url" id="img-url" name="i-url">
                 </div>
                 <div class="btn-group">
-                    <button class="btn btn-primary" type="button">Edit Image</button>
-<!--                    <button class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-expanded="false" type="button"></button>-->
-<!--                        <div class="dropdown-menu">-->
-<!--                            <a class="dropdown-item">Add Image</a>-->
-<!--                            <a class="dropdown-item">Delete Image</a>-->
-<!--                        </div>-->
+                    <button class="btn btn-primary" type="submit" name="submit-button" value="add">Add Image</button>
+                    <button class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-expanded="false"></button>
+                        <div class="dropdown-menu">
+                            <button class="dropdown-item" type="submit" name="submit-button" value="edit">Edit Image</button>
+                            <button class="dropdown-item" type="submit" name="submit-button" value="delete">Delete Image</button>
+                        </div>
                 </div>
             </form>
         </div>

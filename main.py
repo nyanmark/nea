@@ -11,10 +11,16 @@ app.config['SQLALCHEMY_DATABASE_URI'] = \
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.permanent_session_lifetime = timedelta(hours=12)
 
-home_img_url = 'https://nyanmark.github.io/nea/img/choir.jpg'
-gallery_img_url = 'https://nyanmark.github.io/nea/img/image1.jpg'
-
 db = SQLAlchemy(app)
+
+
+class main_images(db.Model):
+    name = db.Column("name", db.String(100), primary_key=True)
+    url = db.Column("url", db.String(100))
+
+    def __init__(self, name, url):
+        self.name = name
+        self.url = url
 
 
 class images(db.Model):
@@ -42,7 +48,7 @@ class users(db.Model):
 
 @app.route("/")
 def index():
-    return render_template("index.html", main_url=home_img_url)
+    return render_template("index.html", main_url=main_images.query.filter_by(name="home").first())
 
 
 @app.route("/register", methods=["POST", "GET"])
@@ -117,10 +123,10 @@ def events():
     return render_template("events.html")
 
 
-# @app.route("/gallery")
-# def gallery():
-#     var_num = gallery.query.all().count() + 1
-#     return render_template("gallery.html", values=gallery.query.all(), main_url=gallery_img_url, num=var_num)
+@app.route("/gallery")
+def gallery():
+    return render_template("gallery.html", values=images.query.all(),
+                           main_url=main_images.query.filter_by(name="gallery").first())
 
 
 @app.route("/admin")
@@ -147,11 +153,54 @@ def admin_users():
 @app.route("/admin/gallery", methods=["POST", "GET"])
 def admin_gallery():
     if request.method == "POST":
+        img_id = request.form["i-id"]
+        img_url = request.form["i-url"]
+        if request.form['submit-button'] == 'add':
+            if img_id == 999:
+                found_image = main_images.query.filter_by(name="home").first()
+                if found_image:
+                    flash(f"Cannot Add an Image which exists", "info")
+                else:
+                    img = main_images("home", img_url)
+                    db.session.add(img)
+                    db.session.commit()
+            elif img_id == 998:
+                found_image = main_images.query.filter_by(name="gallery").first()
+                if found_image:
+                    flash(f"Cannot Add an Image which exists", "info")
+                else:
+                    img = main_images("gallery", img_url)
+                    db.session.add(img)
+                    db.session.commit()
+            img = images(img_url)
+            db.session.add(img)
+            db.session.commit()
+            flash(f"Image Added", "info")
+        if request.form['submit-button'] == 'edit':
+            found_image = images.query.filter_by(_id=img_id).first()
+            if found_image:
+                found_image.url = img_url
+                db.session.commit()
+                flash(f"Image Updated", "info")
+            else:
+                flash(f"No Such Image", "info")
+        if request.form['submit-button'] == 'delete':
+            if img_id == 999 or 998:
+                flash(f"Cannot Delete Image", "info")
+            found_image = images.query.filter_by(_id=img_id).first()
+            if found_image:
+                db.session.delete(found_image)
+                db.session.commit()
+                flash(f"Image Deleted", "info")
+            else:
+                flash(f"No Such Image", "info")
         return render_template("admin/gallery.html", values=images.query.all(),
-                               home_img_url=home_img_url, gallery_img_url=gallery_img_url)
+                               home_img_url=main_images.query.filter_by(name="home").first(),
+                               gallery_img_url=main_images.query.filter_by(name="gallery").first())
     else:
         return render_template("admin/gallery.html", values=images.query.all(),
-                               home_img_url=home_img_url, gallery_img_url=gallery_img_url)
+                               home_img_url=main_images.query.filter_by(name="home").first(),
+                               gallery_img_url=main_images.query.filter_by(name="gallery").first())
 
 
 @app.route("/admin/events")
