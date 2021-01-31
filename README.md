@@ -36,13 +36,13 @@ The python back end will be central for the system to work as it would be runnin
 
 As mentioned previously I had chosen python for my website backend rather than common options such as PHP. Therefore I could simply split my code into 3 defined parts. The web, database and backend logic. The backend logic is the python part however the web part is done through the use of HTML and CSS finally the database part is done within python using Flask's (A python web driver alternative to django) SQLAlchemy package which allow easy interfacting between Flask and any database engine of choice, for testing I will be using sqlite3 database as it allows easy deletion and near instant access times however, I have added options into my code for using a MySQL database which providers better speed for larger deployment and has options such as high availability through clusters.
 
-### Web
+###### Web
 
 The web design is done using
 
-### Database
+###### Database
 
-## Backend
+###### Backend
 
 ## Technical 
 
