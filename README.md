@@ -35,3 +35,15 @@ The python back end will be central for the system to work as it would be runnin
 ## Design
 
 As mentioned previously I had chosen python for my website backend rather than common options such as PHP. Therefore I could simply split my code into 
+
+## Technical 
+
+All displayed on github
+
+## Testing
+
+To be done
+
+## Evaluation
+
+Waiting for response
