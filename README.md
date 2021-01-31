@@ -50,7 +50,7 @@ Python Flask backend.
 
 ## Technical 
 
-All displayed on github
+Located at [GitHub](https://github.com/nyanmark/nea). Files to note for my project "main.py" and the contents of the "templates" folder. Everything else may be ignored. Please request access by sending me your GitHub username.
 
 ## Testing
 
