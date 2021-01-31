@@ -38,7 +38,7 @@ As mentioned previously I had chosen python for my website backend rather than c
 
 **Web**
 
-The web design is done using
+The web design is done using Bootstrap CSS and JQuery JS located at [Here](https://github.com/twbs/bootstrap). This means that whilst I focused on writing HTML bulk of the work involved with writing CSS styling and Javascript was taken off my hands. Additionally using Flask has allowed me to create templates for a footer, header and navibar for the Member and Admin areas meaning each pages individual file only contained content unique to it.
 
 **Database**
 
