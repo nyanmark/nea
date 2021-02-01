@@ -42,7 +42,7 @@ The web design is done using Bootstrap CSS and JQuery JS located at [Here](https
 
 **Database**
 
-My website consists of 4 databases. 
+My website database consists of 4 tables. The initial database for the website I designed was only the users table to hold the websites members. That consisted of essential collumns such as the 
 
 **Backend**
 
