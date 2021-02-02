@@ -2,17 +2,34 @@
 {% block title %}Member Area{% endblock %}
 {% block content %}
 <main class="page">
-    <section class="clean-block">
-        <div class="text">
-            <h1>Member Area</h1>
-                {% with messages = get_flashed_messages() %}
-                    {% if messages %}
-                        {% for msg in messages %}
-                            <p>{{msg}}</p>
-                        {% endfor %}
-                    {% endif %}
-                {% endwith %}
-            <h1>{{user}}</h1>
+    <section class="clean-block dark">
+        <div class="container">
+            <div class="block-heading">
+                <h2 class="text-info">Members Area</h2>
+                <h5 class="text-body">
+                    {% with messages = get_flashed_messages() %}
+                        {% if messages %}
+                            {% for msg in messages %}
+                                {{msg}}
+                            {% endfor %}
+                        {% endif %}
+                    {% endwith %}
+                </h5>
+            </div>
+            <table class="table">
+                <thead>
+                    <tr>
+                      <th>Event Entries</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in events %}
+                    <tr>
+                      <th>{{item}}</th>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
         </div>
     </section>
 </main>

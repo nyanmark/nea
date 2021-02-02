@@ -2,7 +2,7 @@ from mysql import connector
 from flask import Flask, redirect, url_for, render_template, request, session, flash
 from datetime import timedelta
 from flask_sqlalchemy import SQLAlchemy
-from datetime import datetime
+import os
 
 app = Flask(__name__)
 app.secret_key = "D4Lgt4T6ALnDzJjRi9"
@@ -137,7 +137,15 @@ def login():
 @app.route("/members", methods=["POST", "GET"])
 def members():
     if "email" in session:
-        return render_template("members.html")
+        user_events = []
+        email = session["email"]
+        for event in eventsdb.query.all():
+            with open(f'eventsdb/{event._id}.txt', 'r') as the_file:
+                for line in the_file:
+                    if email in line:
+                        user_events.append(event.title+" happening "+event.date)
+            the_file.close()
+        return render_template("members.html", events=user_events)
     else:
         return redirect(url_for("login"))
 
@@ -151,9 +159,28 @@ def logout():
     return redirect(url_for("index"))
 
 
-@app.route("/events")
+@app.route("/events", methods=["POST", "GET"])
 def events():
-    return render_template("events.html", values=eventsdb.query.all())
+    already_signed_up = False
+    if request.method == "POST":
+        email = session["email"]
+        if "email" in session:
+            db_query = users.query.filter_by(email=email).first()
+            name = db_query.name
+            event_id = request.form['submit-button']
+            with open(f'eventsdb/{event_id}.txt', 'w+') as the_file:
+                for line in the_file:
+                    if email in line:
+                        already_signed_up = True
+                if not already_signed_up:
+                    the_file.write(email+"\n")
+                    flash(f"Dear {name} you have successfully signed up for event", "info")
+                the_file.close()
+            return render_template("events.html", values=eventsdb.query.all())
+        else:
+            return redirect(url_for("login"))
+    else:
+        return render_template("events.html", values=eventsdb.query.all())
 
 
 @app.route("/gallery")
@@ -263,11 +290,12 @@ def admin_events():
                 db.session.add(eve)
                 db.session.commit()
                 event = eventsdb.query.filter_by(title=eve_title).first()
-                event_file = open(f"eventsdb/{event._id}.txt", "w+")
+                open(f"eventsdb/{event._id}.txt", "w+")
                 flash(f"Event Created", "info")
             elif request.form['submit-button'] == 'delete':
                 found_event = eventsdb.query.filter_by(_id=eve_id).first()
                 if found_event:
+                    os.remove(f"eventsdb/{found_event._id}.txt")
                     db.session.delete(found_event)
                     db.session.commit()
                     flash(f"Event Deleted", "info")

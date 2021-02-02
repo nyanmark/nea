@@ -1,11 +1,20 @@
 {% extends "base.html" %}
 {% block title %}Events{% endblock %}
 {% block content %}
-<main class="page blog-post-list">
+<main class="page">
     <section class="clean-block clean-blog-list dark">
         <div class="container">
             <div class="block-heading">
                 <h2 class="text-info">Events</h2>
+                <h5 class="text-body">
+                {% with messages = get_flashed_messages() %}
+                    {% if messages %}
+                        {% for msg in messages %}
+                            {{msg}}
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+                </h5>
             </div>
             {% for item in values %}
             <div class="block-content">
@@ -14,8 +23,11 @@
                         <div class="col-lg-5"><img class="rounded img-fluid" src="{{item.img_url}}"></div>
                         <div class="col-lg-7">
                             <h3>{{item.title}}</h3>
-                            <div class="info"><span class="text-muted">{{item.date}} by&nbsp;<a href="#">{{item.creator}}</a></span></div>
-                            <p>{{item.description}}</p><button class="btn btn-outline-primary btn-sm" type="button">Sign Up<Up></Up></button>
+                            <div class="info"><span class="text-muted">{{item.date}} by&nbsp;<a>{{item.creator}}</a></span></div>
+                            <p>{{item.description}}</p>
+                            <form method="post">
+                                <button class="btn btn-outline-primary btn-sm" type="submit" name="submit-button" value="{{item._id}}">Sign Up</button>
+                            </form>
                         </div>
                     </div>
                 </div>
