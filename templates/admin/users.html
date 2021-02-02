@@ -44,7 +44,11 @@
                     <input class="form-control item" type="email" id="em" name="u-mail">
                 </div>
                 <div class="btn-group">
-                    <button class="btn btn-primary" type="submit">Delete User</button>
+                    <button class="btn btn-primary" type="submit" name="submit-button" value="delete">Delete User</button>
+                    <button class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-expanded="false"></button>
+                        <div class="dropdown-menu">
+                            <button class="dropdown-item" type="submit" name="submit-button" value="admin">Make Admin</button>
+                        </div>
                 </div>
             </form>
         </div>

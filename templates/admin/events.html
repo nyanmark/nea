@@ -1,10 +1,79 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-
-</body>
-</html>
+{% extends "admin/base.html" %}
+{% block title %}Events{% endblock %}
+{% block content %}
+<main class="page contact-us-page">
+    <section class="clean-block clean-form dark"><br>
+        <div class="text">
+            <h2><strong><em>Events</em></strong></h2>
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Title</th>
+                            <th>Description</th>
+                            <th>Date</th>
+                            <th>Creator</th>
+                            <th>Image URL</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    {% for item in values %}
+                        <tr>
+                            <td>{{item._id}}</td>
+                            <td>{{item.title}}</td>
+                            <td>{{item.description}}</td>
+                            <td>{{item.date}}</td>
+                            <td>{{item.creator}}</td>
+                            <td>{{item.img_url}}</td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="block-heading">
+            <h5 class="text-body">
+                {% with messages = get_flashed_messages() %}
+                    {% if messages %}
+                        {% for msg in messages %}
+                            {{msg}}
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+            </h5>
+        </div>
+        <div class="form-group">
+            <form method="post">
+                <div class="form-group">
+                    <label for="eve-id">ID (Ignore for new Events)</label>
+                    <input class="form-control item" type="number" id="eve-id" name="e-id">
+                </div>
+                <div class="form-group">
+                    <label for="eve-title">Title</label>
+                    <input class="form-control item" type="text" id="eve-title" name="e-title">
+                </div>
+                <div class="form-group">
+                    <label for="eve-desc">Description</label>
+                    <input class="form-control item" type="text" id="eve-desc" name="e-desc">
+                </div>
+                <div class="form-group">
+                    <label for="eve-date">Date</label>
+                    <input class="form-control item" type="date" id="eve-date" name="e-date">
+                </div>
+                <div class="form-group">
+                    <label for="eve-url">Image URL</label>
+                    <input class="form-control item" type="url" id="eve-url" name="e-url">
+                </div>
+                <div class="btn-group">
+                    <button class="btn btn-primary" type="submit" name="submit-button" value="add">Add Event</button>
+                    <button class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-expanded="false"></button>
+                        <div class="dropdown-menu">
+                            <button class="dropdown-item" type="submit" name="submit-button" value="delete">Delete Event</button>
+                        </div>
+                </div>
+            </form>
+        </div>
+    </section>
+</main>
+{% endblock %}
