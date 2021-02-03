@@ -10,9 +10,9 @@
 
 #### [Analysis](#Analysis)
 
-#### [Documented Design](#Documented Design)
+#### [Documented Design](#Documented-Design)
 
-#### [Technical Solution](#Technical Solution)
+#### [Technical Solution](#Technical-Solution)
 
 #### [Testing](#Testing)
 
