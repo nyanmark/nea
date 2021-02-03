@@ -22,6 +22,15 @@
 
 ##### Problem Identification
 
+Currently there is no efficient way to manage the local choir, post events, get members to commit to an event and accept the members for a choir event. This therefore has created a problem which needs a solution. A possible solution would most likely involve computers, considering how digitised the world has become. However, some management systems can be very expensive or too complex for less computer educated users. This is because web developers usually end up expensive and unless creating your own custom system, using something created for another purpose even though similar can result rather complex for many users.
+
+Therefore a system for a solution to this problem would have to be on the web, allowing all members to access it effortlessly. It must be easy to use and navigate without requiring a steep learning curve excluding the administrator who for any computer system would have to get aquainted with the in and out working of it. Finally a solution would have to be cheap to run in the long term. Meaning the website has to be light weight allowing it to be ran cheaply on the web.
+
+#### Clients
+
+The possible clients for such system, would be those who run a choir or are very pationate members of their choir wanting to increase efficiency and productivity of their choir nethertheless the majority users for such software would range from experienced computer veterans to very new computer users regarding back to the point that it has to be simple to understand and to use.
+
+
 An issue my client had is how do you track all the events your choir is down, and how do you know who is going to participate in those events? This was the issue my client had approached me with therefore, we had to come up with a solution to his problem. To me the ideal seemed a website as it would provide access to anyone from anywhere to see what events are going on and sign up for them, this would also give myself and my client an opportunity for an notification system which sends data to the users email when they sign up. Overall this allowed my client and I to come up witha  sert of requirements listed below.
 
 The requirements I had agreed on with my client would include:
