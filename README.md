@@ -1,4 +1,6 @@
-# NEA PROJECT CHOIR WEBSITE
+<h1 align="center">COMPUTER SCIENCE NON EXAM ASSESMENT <br> CHOIR WEBSITE</h1>
+
+
 
 My client has approached me with an issue. He needs a system to track the performance’s of his choir. A few issues he has presented to me is that it needs to be accessible from the members home and needs to send out notifications to the members, therefore we had agreed on a website with an email system allow email notifications to be sent out to the choir members.
 
@@ -59,3 +61,6 @@ To be done
 ## Evaluation
 
 Waiting for response
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+</body>
