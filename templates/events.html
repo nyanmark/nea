@@ -1,8 +1,8 @@
 {% extends "base.html" %}
 {% block title %}Events{% endblock %}
 {% block content %}
-<main class="page">
-    <section class="clean-block clean-blog-list dark">
+<main class="page"> <!-- Main Class Page allowing this to use the base template -->
+    <section class="clean-block dark">
         <div class="container">
             <div class="block-heading">
                 <h2 class="text-info">Events</h2>
@@ -10,13 +10,14 @@
                 {% with messages = get_flashed_messages() %}
                     {% if messages %}
                         {% for msg in messages %}
-                            {{msg}}
+                            {{msg}} <!-- Prints messages from python code -->
                         {% endfor %}
                     {% endif %}
                 {% endwith %}
                 </h5>
             </div>
             {% for item in values %}
+            <!-- Dynamically creates more posts depending on how many events are in the database -->
             <div class="block-content">
                 <div class="clean-blog-post">
                     <div class="row">

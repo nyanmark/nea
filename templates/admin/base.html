@@ -1,9 +1,12 @@
 <!DOCTYPE html>
+<!-- I wrote my website with the help of Boostrap CSS and JQuery JS, This has allowed me to save time whilst making
+my website efficients and mobile supported. The CSS and JavaScript is imported in the base HTML files in header
+and footer sections. Bootstrap is an opensource and is created by twitter used by huge sites such as walmart and nba -->
 <html lang="html">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>{% block title %}{% endblock %}</title>
+    <title>{% block title %}{% endblock %}</title> <!-- Dynamic Title -->
     <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css')}}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.css">
@@ -15,7 +18,7 @@
     <nav class="navbar navbar-light navbar-expand-lg fixed-top bg-light clean-navbar" style="color: var(--blue);background: var(--gray);">
         <div class="container"><a class="navbar-brand logo" href="./">Cambridge Choir</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navcol-1">
-                <ul class="nav navbar-nav ml-auto">
+                <ul class="nav navbar-nav ml-auto"> <!-- Navbar -->
                     <li class="nav-item"><a class="nav-link active" href="../">Back Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="../admin/users">Manage Users</a></li>
                     <li class="nav-item"><a class="nav-link" href="../admin/gallery">Manage Gallery</a></li>
@@ -24,8 +27,8 @@
             </div>
         </div>
     </nav>
-    {% block content %}{% endblock %}
-    <footer class="page-footer dark">
+    {% block content %}{% endblock %} <!-- Variable to input class main -->
+    <footer class="page-footer dark"> <!-- Footer -->
         <div class="container">
             <div class="row">
                 <div class="col-sm-3">

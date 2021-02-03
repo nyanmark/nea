@@ -10,7 +10,7 @@
                     {% with messages = get_flashed_messages() %}
                         {% if messages %}
                             {% for msg in messages %}
-                                {{msg}}
+                                {{msg}} <!-- Shows flashed test from python code -->
                             {% endfor %}
                         {% endif %}
                     {% endwith %}
@@ -23,7 +23,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    {% for item in events %}
+                    {% for item in events %} <!-- for loop for all the items submitted from python code -->
                     <tr>
                       <th>{{item}}</th>
                     </tr>

@@ -8,15 +8,17 @@
             {% endfor %}
         {% endif %}
     {% endwith %}
-    <main class="page landing-page">
+    <main class="page landing-page"> <!-- Index page aka the Landing Page -->
         <section class="clean-block clean-hero" style="/*noinspection CssUnknownTarget*/background-image: url({{main_url}});color: rgba(0,0,0,0.8);border-color: var(--gray);">
+            <!-- Comment ^ to ignore error checking as the image url variable causes errors in some ide, rgba code to make the image have a dim effect on the site -->
             <div class="text">
                 <h2>The Best Choir in Cambridge</h2>
                 <p>A group of singing connoisseurs comprised of over 100 soprano's, alto's, tenor's and bass. Hope you can join us!</p><a href="#learn-more"><button class="btn btn-outline-light btn-lg" type="button">Learn More</button></a>
+                <!-- #var hyper link to auto scroll down a user to a desired part of the web page -->
             </div>
         </section>
         <section class="clean-block features" id="learn-more">
-            <div class="container">
+            <div class="container"> <!-- Just a placeholder had nothing else to put on this page -->
                 <div class="block-heading">
                     <h2 class="text-info">Voice Types</h2>
                     <p>We have 4 voice types in our wonderful choir, sopranos, altos, tenors and bass</p>
@@ -24,7 +26,7 @@
                 <div class="row justify-content-center">
                     <div class="col-md-5 feature-box"><i class="icon-symbol-female icon"></i>
                         <h4>Soprano</h4>
-                        <p>The highest singing voice of women or boys and formerly of castrati.<br></p>
+                        <p>The highest singing voice of women or boys and formerly of castrato.<br></p>
                     </div>
                     <div class="col-md-5 feature-box"><i class="icon-emotsmile icon"></i>
                         <h4>Tenor</h4>

@@ -1,7 +1,7 @@
 {% extends "admin/base.html" %}
 {% block title %}Administration{% endblock %}
 {% block content %}
-<main class="page">
+<main class="page"> <!-- Main content of document, defines this as the dynamic body rather than the static base -->
     <section class="clean-block clean-form dark"><br>
         <div class="text">
             <h2><strong><em>Gallery</em></strong></h2>
@@ -44,7 +44,7 @@
             </h5>
         </div>
         <div class="form-group">
-            <form method="post">
+            <form method="post"> <!-- Input Form by Method POST -->
                 <div class="form-group">
                     <label for="img-id">ID (Ignore for new Images)</label>
                     <input class="form-control item" type="number" id="img-id" name="i-id">
