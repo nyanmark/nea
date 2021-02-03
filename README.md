@@ -38,7 +38,7 @@ I have went to ask many of my friends and peers about their experiences in a cho
 
 
 <p align="center">
-  <img src="https://nyanmark.github.io/nea/img/chrome_gxiKSuvoe2.png" width="400" height="800">
+  <img src="https://nyanmark.github.io/nea/img/chrome_gxiKSuvoe2.png" width="500" height="800">
 </p>
 
 
