@@ -18,8 +18,6 @@
 
 #### [Evaluation](#Analysis)
 
-<br>
-
 ## Analysis
 
 ##### Problem Identification
