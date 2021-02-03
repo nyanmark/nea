@@ -1,23 +1,22 @@
 <header>
   <h1 align="center">COMPUTER SCIENCE NON EXAM ASSESMENT <br> CHOIR WEBSITE</h1>
 </header>
-
+<br>
 <p align="center">
   <img src="https://nyanmark.github.io/nea/img/readme.png" width="200" height="200">
 </p>
 
 ## Contents
 
-<h3 style="color:DodgerBlue;">Analysis</h3>
+### Analysis
 
-<h3 style="color:DodgerBlue;">Documented Design</h3>
+### Documented Design
 
-<h3 style="color:DodgerBlue;">Technical Solution</h3>
+### Technical Solution
 
-<h3 style="color:DodgerBlue;">Testing</h3>
+### Testing
 
-<h3 style="color:DodgerBlue;">Evaluation</h3>
-
+### Evalutation
 
 My client has approached me with an issue. He needs a system to track the performance’s of his choir. A few issues he has presented to me is that it needs to be accessible from the members home and needs to send out notifications to the members, therefore we had agreed on a website with an email system allow email notifications to be sent out to the choir members.
 
