@@ -1,6 +1,7 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     
-<h1 align="center">COMPUTER SCIENCE NON EXAM ASSESMENT CHOIR WEBSITE</h1>
+<h1 align="center">COMPUTER SCIENCE NON EXAM ASSESMENT
+    CHOIR WEBSITE</h1>
 
 My client has approached me with an issue. He needs a system to track the performance’s of his choir. A few issues he has presented to me is that it needs to be accessible from the members home and needs to send out notifications to the members, therefore we had agreed on a website with an email system allow email notifications to be sent out to the choir members.
 
