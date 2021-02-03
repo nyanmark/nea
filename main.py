@@ -50,18 +50,20 @@ class eventsdb(db.Model):
     date = db.Column("date", db.String(100))
     creator = db.Column("creator", db.String(100))
     img_url = db.Column("img_url", db.String(100))
+    finalized = db.Column("finalized", db.Boolean)
 
-    def __init__(self, title, description, date, creator, img_url):
+    def __init__(self, title, description, date, creator, img_url, finalized):
         self.title = title
         self.description = description
         self.date = date
         self.creator = creator
         self.img_url = img_url
+        self.finalized = finalized
 
 
 # noinspection PyBroadException
 try:
-    usr = users("admin", "admin@localhost", "admin", "soprano", True, True)
+    usr = users("admin", "admin@localhost", "admin", "soprano", True, 0)
     db.session.add(usr)
     db.session.commit()
 except:
@@ -98,7 +100,7 @@ def register():
             flash(f"Please Try again, Email already in use", "info")
             return render_template("register.html")
         else:
-            usr = users(name, email, password, voice, None, None)
+            usr = users(name, email, password, voice, None, 0)
             db.session.add(usr)
             db.session.commit()
             flash(f"Registration Successful {name}", "info")
@@ -138,6 +140,7 @@ def login():
 def members():
     if "email" in session:
         user_events = []
+        user_finalized = []
         email = session["email"]
         for event in eventsdb.query.all():
             with open(f'eventsdb/{event._id}.txt', 'r') as the_file:
@@ -145,7 +148,13 @@ def members():
                     if email in line:
                         user_events.append(event.title+" happening "+event.date)
             the_file.close()
-        return render_template("members.html", events=user_events)
+        for event in eventsdb.query.filter_by(finalized=True).all():
+            with open(f'eventsdb/{event._id}_final.txt', 'r') as final_file:
+                for line in final_file:
+                    if email in line:
+                        user_finalized.append(event.title + " happening " + event.date)
+            final_file.close()
+        return render_template("members.html", events=user_events, accepted=user_finalized)
     else:
         return redirect(url_for("login"))
 
@@ -168,14 +177,18 @@ def events():
             db_query = users.query.filter_by(email=email).first()
             name = db_query.name
             event_id = request.form['submit-button']
-            with open(f'eventsdb/{event_id}.txt', 'w+') as the_file:
-                for line in the_file:
-                    if email in line:
-                        already_signed_up = True
-                if not already_signed_up:
-                    the_file.write(email+"\n")
-                    flash(f"Dear {name} you have successfully signed up for event", "info")
-                the_file.close()
+            event_query = eventsdb.query.filter_by(_id=event_id).first()
+            if not event_query.finalized:
+                with open(f'eventsdb/{event_id}.txt', 'w+') as the_file:
+                    for line in the_file:
+                        if email in line:
+                            already_signed_up = True
+                    if not already_signed_up:
+                        the_file.write(email+"\n")
+                        flash(f"Dear {name} you have successfully signed up for event", "info")
+                    the_file.close()
+            else:
+                flash(f"Dear {name} signups for this event are locked", "info")
             return render_template("events.html", values=eventsdb.query.all())
         else:
             return redirect(url_for("login"))
@@ -279,14 +292,14 @@ def admin_events():
     if admin_auth:
         if request.method == "POST":
             eve_id = request.form["e-id"]
-            eve_title = request.form["e-title"]
-            eve_desc = request.form["e-desc"]
-            eve_date = request.form["e-date"]
-            eve_url = request.form["e-url"]
             email = session["email"]
             user = users.query.filter_by(email=email).first()
             if request.form['submit-button'] == 'add':
-                eve = eventsdb(eve_title, eve_desc, eve_date, user.name, eve_url)
+                eve_title = request.form["e-title"]
+                eve_desc = request.form["e-desc"]
+                eve_date = request.form["e-date"]
+                eve_url = request.form["e-url"]
+                eve = eventsdb(eve_title, eve_desc, eve_date, user.name, eve_url, False)
                 db.session.add(eve)
                 db.session.commit()
                 event = eventsdb.query.filter_by(title=eve_title).first()
@@ -298,9 +311,59 @@ def admin_events():
                     os.remove(f"eventsdb/{found_event._id}.txt")
                     db.session.delete(found_event)
                     db.session.commit()
+                    if found_event.finalized:
+                        os.remove(f"eventsdb/{found_event._id}_final.txt")
                     flash(f"Event Deleted", "info")
                 else:
                     flash(f"No Such Event", "info")
+            elif request.form['submit-button'] == 'finalize':
+                eve_limit = request.form["e-limit"]
+                user_emails = []
+                user_nums = []
+                found_event = eventsdb.query.filter_by(_id=eve_id).first()
+                if not found_event.finalized:
+                    found_event.finalized = True
+                    db.session.commit()
+                    if len(user_emails) > int(eve_limit):
+                        final_file = open(f'eventsdb/{found_event._id}_final.txt', 'w+')
+                        with open(f'eventsdb/{found_event._id}.txt', 'r') as the_file:
+                            for line in the_file:
+                                line = line.rstrip()
+                                user_query = users.query.filter_by(email=line).first()
+                                num = user_query.num_events
+                                user_nums = user_nums.append(num)
+                                user_emails = user_emails.append(line)
+                        the_file.close()
+                        user_nums, user_emails = zip(*sorted(zip(user_nums, user_emails)))
+                        num_to_remove = len(user_emails) - eve_limit
+                        for x in (0, num_to_remove):
+                            del user_nums[-1]
+                            del user_emails[-1]
+                        for line in user_emails:
+                            user_query = users.query.filter_by(email=line).first()
+                            temp = user_query.num_events
+                            temp = temp + 1
+                            user_query.num_events = temp
+                            db.session.commit()
+                            final_file.write(line+"\n")
+                        final_file.close()
+                        flash(f"Event Finalized", "info")
+                    else:
+                        final_file = open(f'eventsdb/{found_event._id}_final.txt', 'w+')
+                        with open(f'eventsdb/{found_event._id}.txt', 'r') as the_file:
+                            for line in the_file:
+                                line = line.rstrip()
+                                user_query = users.query.filter_by(email=line).first()
+                                temp = user_query.num_events
+                                temp = temp + 1
+                                user_query.num_events = temp
+                                db.session.commit()
+                                final_file.write(line+"\n")
+                        the_file.close()
+                        final_file.close()
+                    flash(f"Event Finalized", "info")
+                else:
+                    flash(f"No Such Event or Event already Finalized", "info")
             return render_template("admin/events.html", values=eventsdb.query.all())
         else:
             return render_template("admin/events.html", values=eventsdb.query.all())

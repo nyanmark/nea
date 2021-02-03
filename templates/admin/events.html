@@ -15,6 +15,7 @@
                             <th>Date</th>
                             <th>Creator</th>
                             <th>Image URL</th>
+                            <th>Finalized</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -26,6 +27,7 @@
                             <td>{{item.date}}</td>
                             <td>{{item.creator}}</td>
                             <td>{{item.img_url}}</td>
+                            <td>{{item.finalized}}</td>
                         </tr>
                     {% endfor %}
                     </tbody>
@@ -71,6 +73,22 @@
                         <div class="dropdown-menu">
                             <button class="dropdown-item" type="submit" name="submit-button" value="delete">Delete Event</button>
                         </div>
+                </div>
+            </form>
+        </div>
+        <div class="form-group">
+            <form method="post">
+                <div class="form-group">
+                    <label for="eve-id-2">ID</label>
+                    <input class="form-control item" type="number" id="eve-id-2" name="e-id">
+                </div>
+                <div class="form-group">
+                    <label for="user-limit">User Limit</label>
+                    <input class="form-control item" type="number" id="user-limit" name="e-limit">
+                </div>
+
+                <div class="btn-group">
+                    <button class="btn btn-primary" type="submit" name="submit-button" value="finalize">Finalize Event</button>
                 </div>
             </form>
         </div>

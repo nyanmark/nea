@@ -30,6 +30,20 @@
                     {% endfor %}
                 </tbody>
             </table>
+            <table class="table">
+                <thead>
+                    <tr>
+                      <th>Events Accepted</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in accepted %}
+                    <tr>
+                      <th>{{item}}</th>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
         </div>
     </section>
 </main>
