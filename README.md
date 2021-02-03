@@ -10,13 +10,13 @@
 
 #### [Analysis](#Analysis)
 
-#### [Documented Design](#Analysis)
+#### [Documented Design](#Documented Design)
 
-#### [Technical Solution](#Analysis)
+#### [Technical Solution](#Technical Solution)
 
-#### [Testing](#Analysis)
+#### [Testing](#Testing)
 
-#### [Evaluation](#Analysis)
+#### [Evaluation](#Evaluation)
 
 ## Analysis
 
