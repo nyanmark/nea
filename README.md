@@ -30,6 +30,13 @@ Therefore a system for a solution to this problem would have to be on the web, a
 
 The possible clients for such system, would be those who run a choir or are very pationate members of their choir wanting to increase efficiency and productivity of their choir nethertheless the majority users for such software would range from experienced computer veterans to very new computer users regarding back to the point that it has to be simple to understand and to use.
 
+My client for this software is part of this demoghraphic he is a passionate member of his choir with very good computer knowledge. Making this the perfect software for him and allowing himself and I to discuss a feasible solution accounting for all the features and options a choir may want and need. The points given to me by my client will help me code an efficient and powerful website for any choir. 
+
+#### Investigating the Problem
+
+I have went to ask many of my friends and peers about their experiences in a choir, I wanted to know to what extent was my problem a real world issue and how much possible intrest I could find for a software of this sort that can help therefore I had chosen to send our a questionare and collect some responses.
+
+
 
 An issue my client had is how do you track all the events your choir is down, and how do you know who is going to participate in those events? This was the issue my client had approached me with therefore, we had to come up with a solution to his problem. To me the ideal seemed a website as it would provide access to anyone from anywhere to see what events are going on and sign up for them, this would also give myself and my client an opportunity for an notification system which sends data to the users email when they sign up. Overall this allowed my client and I to come up witha  sert of requirements listed below.
 
