@@ -1,1 +1,3 @@
 venv/
+eventsdb/
+website.sql
