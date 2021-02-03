@@ -8,15 +8,15 @@
 
 ## Contents
 
-#### Analysis
+#### [Analysis](#Analysis)
 
-#### Documented Design
+#### [Documented Design](#Analysis)
 
-#### Technical Solution
+#### [Technical Solution](#Analysis)
 
-#### Testing
+#### [Testing](#Analysis)
 
-#### Evalutation
+#### [Evaluation](#Analysis)
 
 My client has approached me with an issue. He needs a system to track the performance’s of his choir. A few issues he has presented to me is that it needs to be accessible from the members home and needs to send out notifications to the members, therefore we had agreed on a website with an email system allow email notifications to be sent out to the choir members.
 
@@ -50,7 +50,7 @@ For the web front end there will be simple html web pages with all the appropria
 
 The python back end will be central for the system to work as it would be running the link between the website and database and providing function for user notifications such as SMTP giving the customer the option of using the python or any external server for mail sending. This whole system would then interface with an Nginx allowing it to run a proper web conjunction with the python program. This may be considered unneccesary as flask runs a web server for you however to get much of the common features we rely on today such as ssl, sni, speed and versatility it would be ideal to run it using a web server such as Nginx or Apache2.
 
-## Design
+## Documented Design
 
 As mentioned previously I had chosen python for my website backend rather than common options such as PHP. Therefore I could simply split my code into 3 defined parts. The web, database and backend logic. The backend logic is the python part however the web part is done through the use of HTML and CSS finally the database part is done within python using Flask's (A python web driver alternative to django) SQLAlchemy package which allow easy interfacting between Flask and any database engine of choice, for testing I will be using sqlite3 database as it allows easy deletion and near instant access times however, I have added options into my code for using a MySQL database which providers better speed for larger deployment and has options such as high availability through clusters.
 
@@ -66,7 +66,7 @@ My website database consists of 4 tables. The initial database for the website I
 
 Python Flask backend.
 
-## Technical 
+## Technical Solution 
 
 Located at [GitHub](https://github.com/nyanmark/nea). Files to note for my project "main.py" and the contents of the "templates" folder. Everything else may be ignored. Please request access by sending me your GitHub username.
 
