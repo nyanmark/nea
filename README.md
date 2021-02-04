@@ -42,6 +42,12 @@ I have went to ask many of my friends and peers about their experiences in a cho
 
 Above is an image of a form which I had sent out to many of my friends and choir members I know this has allowed me to find out more about my problem, I have compiles the responses I have recieved to get a clear understanding of the issue. I have also added a text box at the bottom of the form allowing some responders to voice extra concerns and suggestions for myself so I could scope the problem further. This had lead me to the sysnopsis that there is indeed an issue with the way many choirs notify and inform members of current and future events.
 
+Now I can show the compiled results for my questionare, as shown the majority of responses faced that there was some concern with the organisation and the aviailability of event information from their choir. Others have also raised concerns about a lack of images of their choir showcasing what type of members there are i.e. young members, old members, male members or female members which I also believe would be a great addition to the choir website as it could be used to encourage others to join the choir once they see their peers in it and with an easy registration feature it should be easier then ever for members to enlist.
+
+
+
+
+
 
 
 An issue my client had is how do you track all the events your choir is down, and how do you know who is going to participate in those events? This was the issue my client had approached me with therefore, we had to come up with a solution to his problem. To me the ideal seemed a website as it would provide access to anyone from anywhere to see what events are going on and sign up for them, this would also give myself and my client an opportunity for an notification system which sends data to the users email when they sign up. Overall this allowed my client and I to come up witha  sert of requirements listed below.
