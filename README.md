@@ -1,5 +1,5 @@
 <header>
-  <h1 align="center">COMPUTER SCIENCE NON EXAM ASSESMENT <br> CHOIR WEBSITE</h1>
+  <h1 align="center">COMPUTER SCIENCE NON EXAM ASSESSMENT <br> CHOIR WEBSITE</h1>
 </header>
 <br>
 <p align="center">
