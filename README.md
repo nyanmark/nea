@@ -50,7 +50,9 @@ Now I can show the compiled results for my questionare, as shown the majority of
 
 I believe this problem is ideal for a computer to solve because computers are devices which are inherrently part of the internet and provide users access to the internet *an electronic communications network that connects computer networks and organizational computer facilities around the world*. This communications network gives users access to the world wide web with the help of a web browser where users can reach many resources on the internet through the use of *hyper text transfer protocol* a application layer protocol also reffered to as an L7 protocol on the OSI model which runs on top of the TCP transport layer protocol also known as an L4 protocol on the OSI model. This would allow users from anywhere in the world with the help of a laptop or a phone to access the website. 
 
-Therefore, this would solve the issue of information being hard to reach as anyone with an internet connected device would be able to see what events are going on, what events they are going to be part of and sign up for those events they're interested in. 
+Therefore, this would solve the issue of information being hard to reach as anyone with an internet connected device would be able to see what events are going on, what events they are going to be part of and sign up for those events they're interested in. Where other means of communication would not be able to acheive the same or would be inferior such as emails being able to notiy people and being commonly used today. They do not have the advantage of the user being able to check at any time of day and new users to easily sign up to the mailing list.
+
+#### Research
 
 ----------------------------------------------------
 
