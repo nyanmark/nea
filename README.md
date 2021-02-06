@@ -66,11 +66,9 @@ I believe this problem is ideal for a computer to solve because computers are de
 
 Therefore, this would solve the issue of information being hard to reach as anyone with an internet connected device would be able to see what events are going on, what events they are going to be part of and sign up for those events they're interested in. Where other means of communication would not be able to acheive the same or would be inferior such as emails being able to notiy people and being commonly used today. They do not have the advantage of the user being able to check at any time of day and new users to easily sign up to the mailing list.
 
-#### Research
+#### Requirements
 
-----------------------------------------------------
-
-An issue my client had is how do you track all the events your choir is down, and how do you know who is going to participate in those events? This was the issue my client had approached me with therefore, we had to come up with a solution to his problem. To me the ideal seemed a website as it would provide access to anyone from anywhere to see what events are going on and sign up for them, this would also give myself and my client an opportunity for an notification system which sends data to the users email when they sign up. Overall this allowed my client and I to come up witha  sert of requirements listed below.
+My client and I had to come up with a solution to this problem. To me the ideal seemed a website as it would provide access to anyone from anywhere to see what events are going on and sign up for them, this would also give myself and my client an opportunity to notify members which events they are in. Overall this allowed my client and I to come up witha  sert of requirements listed below.
 
 The requirements I had agreed on with my client would include:
 
@@ -81,14 +79,21 @@ The requirements I had agreed on with my client would include:
     • Event sign ups
     • Web page with secure login
 
-This task would require a smart approach to reach all the requirements me and my client have discussed leading to some requirements I had come up with listed below. Furthermore considerations have to be taken on how to approach this issue of making an easily accessible website for all the choir member such as needing a domain for the website and a web server.  For the duration of this project I will be using a free subdomain and host the project on a web server I have until I hand it over to the client allowing him to set his own parameters for the website and email sending. 
+#### Objectives
 
-All of the requirements above come with a few objectives:
+This task would require a smart approach to reach all the requirements me and my client have discussed leading to some objectives I had come up with listed below. Furthermore considerations have to be taken on how to approach this issue of making an easily accessible website for all the choir member such as needing a domain for the website and a web server.
+
+Objectives:
 
     • A system which people with a lack of technical knowledge can use
     • Security users must log in to use the website
-    • Overrides for the choir leader / admin 
-    • Event selection and limits, system would output to the choir leader the voice types, quantity of those signed up for the event, the system would also chose those with the least performances if too many have opted in for an event.
+    • A intuative admin panel 
+    • Page listing all the events with a sign up buttom
+    • Events entered and accepted displayed in member page
+    • Image gallery to show off past events
+    • Options for admin to set user limits for events
+    • Website hosted on the web accessible to anyone
+    • Cheap to run in the long run
 
 Such requirements and objective have lead me to chose python as my program of choice using the flask library built into python allowing it to interface with html web pages. I have chosen python because I prefer it to and it provides me greater flexibility whilst setting up a system utilising a database to drive a web front end application. Furthermore it can easily integrate notification systems such as SMTP email sending and web hooks allowing it to notify choir members. I will be using uWSGI allowing python to interface with an Nginx web server allowing the web pages to be accessible from the internet on the choir website.
 
