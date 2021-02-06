@@ -44,7 +44,9 @@ Above is an image of a form which I had sent out to many of my friends and choir
 
 Now I can show the compiled results for my questionare, as shown the majority of responses faced that there was some concern with the organisation and the aviailability of event information from their choir. Others have also raised concerns about a lack of images of their choir showcasing what type of members there are i.e. young members, old members, male members or female members which I also believe would be a great addition to the choir website as it could be used to encourage others to join the choir once they see their peers in it and with an easy registration feature it should be easier then ever for members to enlist.
 
-## INSERT DATA AND IMAGES
+<p align="center">
+  <img src="https://nyanmark.github.io/nea/img/chrome_ddyQ79nG54.png" width="550">
+</p>
 
 #### Why is this problem ideal for a computer
 
