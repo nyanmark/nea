@@ -37,7 +37,7 @@ My client for this software is part of this demoghraphic he is a passionate memb
 I have went to ask many of my friends and peers about their experiences in a choir, I wanted to know to what extent was my problem a real world issue and how much possible intrest I could find for a software of this sort that can help therefore I had chosen to send our a questionare and collect some responses.
 
 <p align="center">
-  <img src="https://nyanmark.github.io/nea/img/chrome_gxiKSuvoe2.png" width="550" height="800">
+  <img src="https://nyanmark.github.io/nea/img/chrome_gxiKSuvoe2.png" width="550">
 </p>
 
 Above is an image of a form which I had sent out to many of my friends and choir members I know this has allowed me to find out more about my problem, I have compiles the responses I have recieved to get a clear understanding of the issue. I have also added a text box at the bottom of the form allowing some responders to voice extra concerns and suggestions for myself so I could scope the problem further. This had lead me to the sysnopsis that there is indeed an issue with the way many choirs notify and inform members of current and future events.
