@@ -48,7 +48,17 @@ Now I can show the compiled results for my questionare, as shown the majority of
   <img src="https://nyanmark.github.io/nea/img/chrome_ddyQ79nG54.png" width="550">
 </p>
 
-This chart shows that a majority of choir members found it hard to find out what events were going on in their choir making this one of the issues that my technical solutions will solve by proving an easy to access web page listing all events the are currently on.
+This chart shows that a majority of choir members found it hard to find out what events were going on in their choir making this one of the issues that my technical solutions will solve by proving an easy to access web page listing all events the are currently on. Additionally many found it hard to sign up for an event as shown by the chart below.
+
+<p align="center">
+  <img src="https://nyanmark.github.io/nea/img/chrome_wBn2rra5Er.png" width="550">
+</p>
+
+Finally the last chart is about how easy was it for members to find out what event's they were accepted to be part of after signing up which showed that many users had trouble knowing wether or not they had been accepted to be in an event. I am hoping to solve this through my technical solution by displaying this info in an easy format for the users.
+
+<p align="center">
+  <img src="https://nyanmark.github.io/nea/img/chrome_kvI6panV2B.png" width="550">
+</p>
 
 #### Why is this problem ideal for a computer
 
