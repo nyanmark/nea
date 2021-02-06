@@ -48,6 +48,8 @@ Now I can show the compiled results for my questionare, as shown the majority of
   <img src="https://nyanmark.github.io/nea/img/chrome_ddyQ79nG54.png" width="550">
 </p>
 
+This chart shows that a majority of choir members found it hard to find out what events were going on in their choir making this one of the issues that my technical solutions will solve by proving an easy to access web page listing all events the are currently on.
+
 #### Why is this problem ideal for a computer
 
 I believe this problem is ideal for a computer to solve because computers are devices which are inherrently part of the internet and provide users access to the internet *an electronic communications network that connects computer networks and organizational computer facilities around the world*. This communications network gives users access to the world wide web with the help of a web browser where users can reach many resources on the internet through the use of *hyper text transfer protocol* a application layer protocol also reffered to as an L7 protocol on the OSI model which runs on top of the TCP transport layer protocol also known as an L4 protocol on the OSI model. This would allow users from anywhere in the world with the help of a laptop or a phone to access the website. 
