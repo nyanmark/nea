@@ -8,15 +8,15 @@
 
 ## Contents
 
-#### [Analysis](#Analysis)
+#### [Analysis](#Analysis-1)
 
-#### [Documented Design](#Documented-Design)
+#### [Documented Design](#Documented-Design-1)
 
-#### [Technical Solution](#Technical-Solution)
+#### [Technical Solution](#Technical-Solution-1)
 
-#### [Testing](#Testing)
+#### [Testing](#Testing-1)
 
-#### [Evaluation](#Evaluation)
+#### [Evaluation](#Evaluation-1)
 
 ## Analysis
 
@@ -96,7 +96,7 @@ Listed Objectives for the Technical Solution:
     • Cheap to run in the long run 
     • Databases for fast access and indexing (e)
     
-I had to decided to split these objectives into essential and possible to set proper priorities for my project. Those which I deemed essential have been marked with an (e) next to them therefore I can prioritise them when designing my project. Additionally I had to figure out ways to test my code for these requirement and objectives listed above which will be noted in the [Testing](#Testing) section of my write up.
+I had to decided to split these objectives into essential and possible to set proper priorities for my project. Those which I deemed essential have been marked with an (e) next to them therefore I can prioritise them when designing my project. Additionally I had to figure out ways to test my code for these requirement and objectives listed above which will be noted in the [Testing](#Testing-1) section of my write up.
 
 ## Documented Design
 
