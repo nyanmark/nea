@@ -566,7 +566,7 @@ and footer sections. Bootstrap is an opensource and is created by twitter used b
             </div>
         </div>
     </nav>
-    {% block content %}{% endblock %} <!-- Variable to input class main -->
+    { block content }{ endblock } <!-- Variable to input class main - Had to redact % from variable as github had issues with it on the readme -->
     <footer class="page-footer dark"> <!-- Footer -->
         <div class="container">
             <div class="row">
@@ -616,22 +616,22 @@ and footer sections. Bootstrap is an opensource and is created by twitter used b
 
 **Members HTML**
 ``` html
-{% extends "base.html" %}
-{% block title %}Member Area{% endblock %}
-{% block content %}
+{ extends "base.html" } <!-- Had to redact % from variable as github had issues with it on the readme -->
+{ block title }Member Area{ endblock } <!-- Had to redact % from variable as github had issues with it on the readme -->
+{ block content } <!-- Had to redact % from variable as github had issues with it on the readme -->
 <main class="page">
     <section class="clean-block dark">
         <div class="container">
             <div class="block-heading">
                 <h2 class="text-info">Members Area</h2>
                 <h5 class="text-body">
-                    {% with messages = get_flashed_messages() %}
-                        {% if messages %}
-                            {% for msg in messages %}
-                                {{msg}} <!-- Shows flashed test from python code -->
-                            {% endfor %}
-                        {% endif %}
-                    {% endwith %}
+                    { with messages = get_flashed_messages() }
+                        { if messages }
+                            { for msg in messages }
+                                {{msg}} <!-- Shows flashed test from python code --> 
+                            { endfor }
+                        { endif }
+                    { endwith } <!-- Had to redact % from variable as github had issues with it on the readme -->
                 </h5>
             </div>
             <table class="table">
@@ -641,11 +641,12 @@ and footer sections. Bootstrap is an opensource and is created by twitter used b
                     </tr>
                 </thead>
                 <tbody>
-                    {% for item in events %} <!-- for loop for all the items submitted from python code -->
+                    { for item in events } <!-- for loop for all the items submitted from python code -->
+                    <!-- Had to redact % from variable as github had issues with it on the readme -->
                     <tr>
                       <th>{{item}}</th>
                     </tr>
-                    {% endfor %}
+                    { endfor }
                 </tbody>
             </table>
             <table class="table">
@@ -655,20 +656,20 @@ and footer sections. Bootstrap is an opensource and is created by twitter used b
                     </tr>
                 </thead>
                 <tbody>
-                    {% for item in accepted %}
+                    { for item in accepted } <!-- Had to redact % from variable as github had issues with it on the readme -->
                     <tr>
                       <th>{{item}}</th>
                     </tr>
-                    {% endfor %}
+                    { endfor }
                 </tbody>
             </table>
         </div>
     </section>
 </main>
-{% endblock %}
+{ endblock }
 ```
 
-Other pages are individually located in the "templates" folder on [GitHub](https://github.com/nyanmark/nea).
+Other pages are individually located in the "templates" folder on [GitHub](https://github.com/nyanmark/nea). Due to the markdown errors with githubs interpretation of the code I believe that would be the most effective way of examinining the website HTML markup.
 
 **Sitemap**
 
