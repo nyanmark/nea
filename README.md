@@ -126,7 +126,7 @@ Python Flask backend.
 
 If you would like to look at the files rather than screenshots they are located at [GitHub](https://github.com/nyanmark/nea). Files to note for my project "main.py" and the contents of the "templates" folder. Everything else may be ignored.
 
-** Main Py **
+**Main Py**
 ``` python
 from flask import Flask, redirect, url_for, render_template, request, session, flash
 from datetime import timedelta
@@ -516,8 +516,142 @@ def admin_events():
 if __name__ == '__main__':
     db.create_all()  # Creates all the databases on startup
     app.run(debug=True)  # Initialises the app in debug mode so I can see errors
-
 ```
+
+**Base HTML**
+```html
+<!DOCTYPE html>
+<!-- I wrote my website with the help of Boostrap CSS and JQuery JS, This has allowed me to save time whilst making
+my website efficients and mobile supported. The CSS and JavaScript is imported in the base HTML files in header
+and footer sections. Bootstrap is an opensource and is created by twitter used by huge sites such as walmart and nba -->
+<html lang="html">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>{% block title %}{% endblock %}</title> <!-- Dynamic Title -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css')}}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.min.css')}}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='singer.ico')}}"/>
+</head>
+
+<body>
+    <nav class="navbar navbar-light navbar-expand-lg fixed-top bg-light clean-navbar" style="color: var(--blue);background: var(--gray);">
+        <div class="container"><a class="navbar-brand logo" href="./">Cambridge Choir</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navcol-1">
+                <ul class="nav navbar-nav ml-auto"> <!-- Navbar -->
+                    <li class="nav-item"><a class="nav-link active" href="./">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./events">Events</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./gallery">gallery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./login">login</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    {% block content %}{% endblock %} <!-- Variable to input class main -->
+    <footer class="page-footer dark"> <!-- Footer -->
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3">
+                    <h5>Get started</h5>
+                    <ul>
+                        <li><a href="./">Home</a></li>
+                        <li><a href="./register">Sign up</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-3">
+                    <h5>About us</h5>
+                    <ul>
+                        <li><a href="./gallery">Image Gallery</a></li>
+                        <li><a href="mailto:choir@example.com">Contact us</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-3">
+                    <h5>Members</h5>
+                    <ul>
+                        <li><a href="./members">Member Area</a></li>
+                        <li><a href="./logout">Sign out</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-3">
+                    <h5>Legal</h5>
+                    <ul>
+                        <li><a href="./404">Terms of Service</a></li>
+                        <li></li>
+                        <li><a href="./404">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <p>© 2021 Cambridge Choir</p>
+        </div>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
+    <script src="{{ url_for('static', filename='bootstrap.min.css')}}"></script>
+</body>
+
+</html>
+```
+
+**Members HTML*
+``` html
+{% extends "base.html" %}
+{% block title %}Member Area{% endblock %}
+{% block content %}
+<main class="page">
+    <section class="clean-block dark">
+        <div class="container">
+            <div class="block-heading">
+                <h2 class="text-info">Members Area</h2>
+                <h5 class="text-body">
+                    {% with messages = get_flashed_messages() %}
+                        {% if messages %}
+                            {% for msg in messages %}
+                                {{msg}} <!-- Shows flashed test from python code -->
+                            {% endfor %}
+                        {% endif %}
+                    {% endwith %}
+                </h5>
+            </div>
+            <table class="table">
+                <thead>
+                    <tr>
+                      <th>Event Entries</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in events %} <!-- for loop for all the items submitted from python code -->
+                    <tr>
+                      <th>{{item}}</th>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <table class="table">
+                <thead>
+                    <tr>
+                      <th>Events Accepted</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in accepted %}
+                    <tr>
+                      <th>{{item}}</th>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </section>
+</main>
+{% endblock %}
+```
+
+Other pages are individually located in the "templates" folder on [GitHub](https://github.com/nyanmark/nea).
 
 ## Testing
 
