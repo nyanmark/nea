@@ -124,7 +124,7 @@ Python Flask backend.
 
 ## Technical Solution 
 
-Located at [GitHub](https://github.com/nyanmark/nea). Files to note for my project "main.py" and the contents of the "templates" folder. Everything else may be ignored. Please request access by sending me your GitHub username.
+If you would like to look at the files rather than screenshots they are located at [GitHub](https://github.com/nyanmark/nea). Files to note for my project "main.py" and the contents of the "templates" folder. Everything else may be ignored.
 
 ## Testing
 
