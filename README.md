@@ -750,7 +750,7 @@ The final step was to create a service for the uWSGI module which allows interfa
   <img src="https://nyanmark.github.io/nea/img/MobaXterm_UhXoYLL2nk.png" width="550">
 </p>
 
-website.service is no functional.
+Nginx uWSGI module ran by website.service is now functional.
 
 <p align="center">
   <img src="https://nyanmark.github.io/nea/img/MobaXterm_K1IS7qlboE.png" width="550">
