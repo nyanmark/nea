@@ -597,7 +597,7 @@ and footer sections. Bootstrap is an opensource and is created by twitter used b
 </html>
 ```
 
-**Members HTML*
+**Members HTML**
 ``` html
 {% extends "base.html" %}
 {% block title %}Member Area{% endblock %}
@@ -652,6 +652,47 @@ and footer sections. Bootstrap is an opensource and is created by twitter used b
 ```
 
 Other pages are individually located in the "templates" folder on [GitHub](https://github.com/nyanmark/nea).
+
+**Sitemap**
+
+``` xml
+<urlset xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!--
+ created with Free Online Sitemap Generator www.xml-sitemaps.com 
+-->
+<url>
+<loc>https://mlweb.me/</loc>
+<lastmod>2021-02-07T17:44:49+00:00</lastmod>
+<priority>1.00</priority>
+</url>
+<url>
+<loc>https://mlweb.me/events</loc>
+<lastmod>2021-02-07T17:44:49+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://mlweb.me/gallery</loc>
+<lastmod>2021-02-07T17:44:49+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://mlweb.me/login</loc>
+<lastmod>2021-02-07T17:44:49+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://mlweb.me/register</loc>
+<lastmod>2021-02-07T17:44:49+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+```
+
+Pages in the /admin directory are hidden and not hyperlinked therefore are not shown in the sitemap. These pages include:
+
+- /admin
+- /admin/events
+- /admin/users
+- /admin/gallery
 
 ## Testing
 
