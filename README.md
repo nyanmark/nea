@@ -125,7 +125,7 @@ This means that whilst I focused on writing HTML bulk of the work involved with 
 My decision to use bootstrap was partially inspired by many huge websites using it [including](https://expo.getbootstrap.com/) and many others such as the Target and NBA website. What striked me more is that nearly 1/4 of the top 1 million websites are made with the help of bootstrap. Additionally through my intended usage of bootrap it lead me to explore why was it so prevalent in the top websites today. This lead me to come up with a few reasons listed below:
 
 - Easy to implement, You just have to input a few links at the <head> section and bottom of the <body> section in your code.
-- Well documented, There is vast documentation allowing you to find out what classes lead to what effect and structure.
+- Well [documented](https://getbootstrap.com/), There is vast documentation allowing you to find out what classes lead to what effect and structure.
 - Versatile, as shown by many sites in the bootstrap expo linked above it. Allot of the work is still with the creator to design it and make it look good.
 - Fast loading, Soon as bootstrap is so widely used. It is cached by many CDN's on the web such as cloudflare making it load very fast.
 - Mobile support, Importantly bootstrap is has mobile support allowing you to get very high page loading scores on mobile without a seperate mobile version.
