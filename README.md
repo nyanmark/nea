@@ -85,16 +85,18 @@ This task would require a smart approach to reach all the requirements me and my
 
 Listed Objectives for the Technical Solution:
 
-    • A system which people with a lack of technical knowledge can use
-    • Security users must log in to use the website
-    • A intuative admin panel 
-    • Page listing all the events with a sign up buttom
-    • Events entered and accepted displayed in member page
+    • A system which people with a lack of technical knowledge can use (e)
+    • Security users must log in to use the website (e)
+    • A intuative admin panel (e)
+    • Page listing all the events with a sign up (e)
+    • Events entered and accepted displayed in member page (e)
     • Image gallery to show off past events
     • Options for admin to set user limits for events
     • Website hosted on the web accessible to anyone
-    • Cheap to run in the long run
-    • Databases for fast access and indexing
+    • Cheap to run in the long run 
+    • Databases for fast access and indexing (e)
+    
+I had to decided to split these objectives into essential and possible to set proper priorities for my project. Those which I deemed essential have been marked with an (e) next to them therefore I can prioritise them when designing my project. Additionally I had to figure out ways to test my code for these requirement and objectives listed above which will be noted in the [Testing](#Testing) section of my write up.
 
 ## Documented Design
 
