@@ -712,9 +712,78 @@ Pages in the /admin directory are hidden and not hyperlinked therefore are not s
 - /admin/users
 - /admin/gallery
 
+**Uploading To Web Server**
+
+Below are some image of the process taken for the website to become accessible to anyone on the World Wide Web,
+
+<p align="center">
+  <img src="https://nyanmark.github.io/nea/img/MobaXterm_3YDnmRjfWZ.png" width="550">
+</p>
+
+First I started off with a fresh Ubuntu 20.04 VPS. It is very cheap and therefore has little power (512MB RAM) leading me to believe the requirements for good stability for my website are a VPS with 2-4 GB Ram and 1 Dedicated CPU core which can be gotten for anywhere from $10-20.
+
+<p align="center">
+  <img src="https://nyanmark.github.io/nea/img/MobaXterm_bseHaWxynt.png" width="550">
+</p>
+
+After uploading the webfiles I create a virtual environment for the python web app just like there is in my ide. This allowed me to install pip modules just in the virtual environment without having to install them globally on the system. I have omitted the "apt install" commands from these images for simplicity reasons.
+
+<p align="center">
+  <img src="https://nyanmark.github.io/nea/img/MobaXterm_BllGd3URV2.png" width="550">
+</p>
+
+Once that was done. I created a MySQL database for my website and instructed my program to use it by altering the connection string. This is to provide the site with more datatypes such as the TIME datatype. More flexibility and scalability given to it by MySQL. The downside to this is MySQL uses ram making it have a big burden if the server is very weak. However, the typical ram usage is around 250 MB which is nothing in the grand scheme of things.
+
+<p align="center">
+  <img src="https://nyanmark.github.io/nea/img/MobaXterm_DROSh4lJtr.png" width="550">
+</p>
+
+Now I was ready to test my Flask app.
+
+<p align="center">
+  <img src="https://nyanmark.github.io/nea/img/MobaXterm_R1PIwK6D8z.png" width="550">
+</p>
+
+The final step was to create a service for the uWSGI module which allows interfacing between Flask and NGINX a web server. Once this was done the uWSGI module created a sock within the program folder which allows nginx to interface with it. PHP also uses a similar technique of interfacing with nginx by using a .sock file with similar syntax as my website.conf below. PHP is a scripting language for web development and is frequently used as an alternative to python for web apps.
+
+<p align="center">
+  <img src="https://nyanmark.github.io/nea/img/MobaXterm_UhXoYLL2nk.png" width="550">
+</p>
+
+website.service is no functional.
+
+<p align="center">
+  <img src="https://nyanmark.github.io/nea/img/MobaXterm_K1IS7qlboE.png" width="550">
+</p>
+
+Nginx Web Server configuration.
+
+<p align="center">
+  <img src="https://nyanmark.github.io/nea/img/MobaXterm_UhXoYLL2nk.png" width="550">
+</p>
+
+Now my website is up and accessible to everyone on the internet. However, there was one issue, a lack of SSL. This is bad as passwords would be submitted over clear text on the internet.
+
+<p align="center">
+  <img src="https://nyanmark.github.io/nea/img/firefox_Qa6OCItrDx.png" width="550">
+</p>
+
+Below is me installing letsencrypt on my server which allows me to get Free SSL certificates. Providing secure and encrypted communication for users on the internet between my site.
+
+<p align="center">
+  <img src="https://nyanmark.github.io/nea/img/MobaXterm_dSamoWP8QW.png" width="550">
+</p>
+
+Now when you load it in your browser it has the lock showing that data is now being transmitted over hyper text transfer protocol secure.
+
+<p align="center">
+  <img src="https://nyanmark.github.io/nea/img/firefox_reE7HgQnt0.png" width="550">
+</p>
+
+
 ## Testing
 
-To be done
+[x] Cheap to Run - As shown above the website can be ran on a $2 VPS and most likely will work very well on something priced around $10.
 
 ## Evaluation
 
