@@ -544,7 +544,7 @@ and footer sections. Bootstrap is an opensource and is created by twitter used b
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>{% block title %}{% endblock %}</title> <!-- Dynamic Title -->
+    <title><!--{% block title %}{% endblock %}--></title> <!-- Dynamic Title - Had to comment as github had issues with it on the readme -->
     <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css')}}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.css">
