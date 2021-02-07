@@ -115,7 +115,7 @@ As mentioned previously I had chosen python for my website backend rather than c
 I was thinking what the ideal look would be for the web front. It needed to be simple however eye catching to get users attention to the website. Therefore I had to create a mock up sesign sketching out what my desired look would be. The Navbar and Footer were very important for me as they would be persistent across the whole website defined in the base template. This is the original design I came up with below.
 
 <p align="center">
-  <img src="https://nyanmark.github.io/nea/img/Acrobat_jqMulpKc4r.png " width="550">
+  <img src="https://nyanmark.github.io/nea/img/design_jqMulpKc4r.png" width="550">
 </p>
 
 Another question which I had is how to make the website fast response and good looking. I had to do this with the consideration of the tight time constraints I had for this project. Therefore when I found out there was a web frame work known as bootstrap which would take away most of the work of writing CSS and JS allowing me to focus on simple yet effective Python and HTML I had decided to use it. You can find the source located [Here](https://github.com/twbs/bootstrap) on GitHub.
@@ -125,7 +125,7 @@ This means that whilst I focused on writing HTML bulk of the work involved with 
 My decision to use bootstrap was partially inspired by many huge websites using it [including](https://expo.getbootstrap.com/) and many others such as the Target and NBA website. What striked me more is that nearly 1/4 of the top 1 million websites are made with the help of bootstrap. Additionally through my intended usage of bootrap it lead me to explore why was it so prevalent in the top websites today. This lead me to come up with a few reasons listed below:
 
 - Easy to implement, You just have to input a few links at the <head> section and bottom of the <body> section in your code.
-- Well documented, There is vast documentation allowing you to find out what classes lead to what effect and structure.
+- Well [documented](https://getbootstrap.com/), There is vast documentation allowing you to find out what classes lead to what effect and structure.
 - Versatile, as shown by many sites in the bootstrap expo linked above it. Allot of the work is still with the creator to design it and make it look good.
 - Fast loading, Soon as bootstrap is so widely used. It is cached by many CDN's on the web such as cloudflare making it load very fast.
 - Mobile support, Importantly bootstrap is has mobile support allowing you to get very high page loading scores on mobile without a seperate mobile version.
@@ -544,7 +544,8 @@ and footer sections. Bootstrap is an opensource and is created by twitter used b
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>{% block title %}{% endblock %}</title> <!-- Dynamic Title -->
+    <title>{ block title }{ endblock }</title> 
+    <!-- Dynamic Title - Had to redact % from variable as github had issues with it on the readme -->
     <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css')}}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.css">
@@ -565,7 +566,7 @@ and footer sections. Bootstrap is an opensource and is created by twitter used b
             </div>
         </div>
     </nav>
-    {% block content %}{% endblock %} <!-- Variable to input class main -->
+    { block content }{ endblock } <!-- Variable to input class main - Had to redact % from variable as github had issues with it on the readme -->
     <footer class="page-footer dark"> <!-- Footer -->
         <div class="container">
             <div class="row">
@@ -615,22 +616,22 @@ and footer sections. Bootstrap is an opensource and is created by twitter used b
 
 **Members HTML**
 ``` html
-{% extends "base.html" %}
-{% block title %}Member Area{% endblock %}
-{% block content %}
+{ extends "base.html" } <!-- Had to redact % from variable as github had issues with it on the readme -->
+{ block title }Member Area{ endblock } <!-- Had to redact % from variable as github had issues with it on the readme -->
+{ block content } <!-- Had to redact % from variable as github had issues with it on the readme -->
 <main class="page">
     <section class="clean-block dark">
         <div class="container">
             <div class="block-heading">
                 <h2 class="text-info">Members Area</h2>
                 <h5 class="text-body">
-                    {% with messages = get_flashed_messages() %}
-                        {% if messages %}
-                            {% for msg in messages %}
-                                {{msg}} <!-- Shows flashed test from python code -->
-                            {% endfor %}
-                        {% endif %}
-                    {% endwith %}
+                    { with messages = get_flashed_messages() }
+                        { if messages }
+                            { for msg in messages }
+                                {{msg}} <!-- Shows flashed test from python code --> 
+                            { endfor }
+                        { endif }
+                    { endwith } <!-- Had to redact % from variable as github had issues with it on the readme -->
                 </h5>
             </div>
             <table class="table">
@@ -640,11 +641,12 @@ and footer sections. Bootstrap is an opensource and is created by twitter used b
                     </tr>
                 </thead>
                 <tbody>
-                    {% for item in events %} <!-- for loop for all the items submitted from python code -->
+                    { for item in events } <!-- for loop for all the items submitted from python code -->
+                    <!-- Had to redact % from variable as github had issues with it on the readme -->
                     <tr>
                       <th>{{item}}</th>
                     </tr>
-                    {% endfor %}
+                    { endfor }
                 </tbody>
             </table>
             <table class="table">
@@ -654,20 +656,20 @@ and footer sections. Bootstrap is an opensource and is created by twitter used b
                     </tr>
                 </thead>
                 <tbody>
-                    {% for item in accepted %}
+                    { for item in accepted } <!-- Had to redact % from variable as github had issues with it on the readme -->
                     <tr>
                       <th>{{item}}</th>
                     </tr>
-                    {% endfor %}
+                    { endfor }
                 </tbody>
             </table>
         </div>
     </section>
 </main>
-{% endblock %}
+{ endblock }
 ```
 
-Other pages are individually located in the "templates" folder on [GitHub](https://github.com/nyanmark/nea).
+Other pages are individually located in the "templates" folder on [GitHub](https://github.com/nyanmark/nea). Due to the markdown errors with githubs interpretation of the code I believe that would be the most effective way of examinining the website HTML markup.
 
 **Sitemap**
 
