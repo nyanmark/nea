@@ -783,7 +783,7 @@ Now when you load it in your browser it has the lock showing that data is now be
 
 ## Testing
 
-[x] Cheap to Run - As shown above the website can be ran on a $2 VPS and most likely will work very well on something priced around $10.
+- [x] Cheap to Run - As shown above the website can be ran on a $2 VPS and most likely will work very well on something priced around $10.
 
 ## Evaluation
 
