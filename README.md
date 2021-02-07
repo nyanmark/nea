@@ -115,7 +115,7 @@ As mentioned previously I had chosen python for my website backend rather than c
 I was thinking what the ideal look would be for the web front. It needed to be simple however eye catching to get users attention to the website. Therefore I had to create a mock up sesign sketching out what my desired look would be. The Navbar and Footer were very important for me as they would be persistent across the whole website defined in the base template. This is the original design I came up with below.
 
 <p align="center">
-  <img src="https://nyanmark.github.io/nea/img/Acrobat_jqMulpKc4r.png " width="550">
+  <img src="https://nyanmark.github.io/nea/img/design_jqMulpKc4r.png" width="550">
 </p>
 
 Another question which I had is how to make the website fast response and good looking. I had to do this with the consideration of the tight time constraints I had for this project. Therefore when I found out there was a web frame work known as bootstrap which would take away most of the work of writing CSS and JS allowing me to focus on simple yet effective Python and HTML I had decided to use it. You can find the source located [Here](https://github.com/twbs/bootstrap) on GitHub.
