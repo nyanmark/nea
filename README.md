@@ -112,7 +112,23 @@ As mentioned previously I had chosen python for my website backend rather than c
 
 **Web**
 
-The web design is done using Bootstrap CSS and JQuery JS located at [Here](https://github.com/twbs/bootstrap). This means that whilst I focused on writing HTML bulk of the work involved with writing CSS styling and Javascript was taken off my hands. Additionally using Flask has allowed me to create templates for a footer, header and navibar for the Member and Admin areas meaning each pages individual file only contained content unique to it. Using python has also allowed me to set variables and logic within the HTML code making me think of the most efficient decisions wether to do logic within python and then import the variable or do the code within the HTML. I have chosen to place the most important URL's within the header whilst keeping other essential however lesser important URL's in the footer. Some huge websites using boostrap [include](https://expo.getbootstrap.com/). Nearly 1/4 of the top 1 million websites are made with the help of bootstrap.
+I was thinking what the ideal look would be for the web front. It needed to be simple however eye catching to get users attention to the website. Therefore I had to create a mock up sesign sketching out what my desired look would be. The Navbar and Footer were very important for me as they would be persistent across the whole website defined in the base template. This is the original design I came up with below.
+
+<p align="center">
+  <img src="https://nyanmark.github.io/nea/img/Acrobat_jqMulpKc4r.png " width="550">
+</p>
+
+Another question which I had is how to make the website fast response and good looking. I had to do this with the consideration of the tight time constraints I had for this project. Therefore when I found out there was a web frame work known as bootstrap which would take away most of the work of writing CSS and JS allowing me to focus on simple yet effective Python and HTML I had decided to use it. You can find the source located [Here](https://github.com/twbs/bootstrap) on GitHub.
+
+This means that whilst I focused on writing HTML bulk of the work involved with writing CSS styling and Javascript was taken off my hands. Additionally using Flask has allowed me to create templates for a footer, header and navibar for the Member and Admin areas meaning each pages individual file only contained content unique to it. Using python has also allowed me to set variables and logic within the HTML code making me think of the most efficient decisions wether to do logic within python and then import the variable or do the code within the HTML. I have chosen to place the most important URL's within the header whilst keeping other essential however lesser important URL's in the footer. 
+
+My decision to use bootstrap was partially inspired by many huge websites using it [including](https://expo.getbootstrap.com/) and many others such as the Target and NBA website. What striked me more is that nearly 1/4 of the top 1 million websites are made with the help of bootstrap. Additionally through my intended usage of bootrap it lead me to explore why was it so prevalent in the top websites today. This lead me to come up with a few reasons listed below:
+
+- Easy to implement, You just have to input a few links at the <head> section and bottom of the <body> section in your code.
+- Well documented, There is vast documentation allowing you to find out what classes lead to what effect and structure.
+- Versatile, as shown by many sites in the bootstrap expo linked above it. Allot of the work is still with the creator to design it and make it look good.
+- Fast loading, Soon as bootstrap is so widely used. It is cached by many CDN's on the web such as cloudflare making it load very fast.
+- Mobile support, Importantly bootstrap is has mobile support allowing you to get very high page loading scores on mobile without a seperate mobile version.
 
 **Database**
 
