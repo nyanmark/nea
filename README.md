@@ -783,9 +783,28 @@ Now when you load it in your browser it has the lock showing that data is now be
 
 ## Testing
 
-- [x] Cheap to Run - As shown above the website can be ran on a $2 VPS and most likely will work very well on something priced around $10.
+- [x] A system which people with a lack of technical knowledge can use. Throughout my testing and my questionare regarding my finished product I believe many would find it easy to use. To verify this further I had my grand mother try using and accessing the site. With little technical knowledge she was abe to get around it. I believe I own this success to the very simple and clean design where the most essential buttoms are right at the top of the page and everything is marked in a nice and clear text.
+
+- [x] Security users must log in to use the website. The website does have a secure login page which requires the users email and password and whenever the user tries to access the members area he is send back to the login page to make sure he is signed in.
+    
+- [x] A intuative admin panel. I believe the admin panel is easy for anyone to use with large clear buttons indicating what is where, the forms are large again with clear buttons and the tables are labeled properly on each page.
+    
+- [x] Page listing all the events with a sign up. My website does include this page so I believe this objective has been met.
+
+- [x] Events entered and accepted displayed in member page. My website also had this display in the members page therefore I believe this objective has been met.
+
+- [x] Image gallery to show off past events
+    
+- [x] Website hosted on the web accessible to anyone. This is also a complete objective as anyone in the world can access my site [at](https://mlweb.me). Unfortunately the current server it is running on is not so powerful meaning there is a arbitrary user limitation.
+
+- [x] Databases for fast access and indexing. The website does use a database as shown in the technical solution.
+
+- [x] Cheap to Run. As shown above the website can be ran on a $2 VPS and most likely will work very well on something priced around $10.
+
+- [x] Options for admin to set user limits for events. The admin can set a user limit when finalizing an event meaning there will be an x ammount of users accepted for an event. This is done through chosing users with the least performances.
 
 ## Evaluation
 
-Waiting for response
+
+
 
