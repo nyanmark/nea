@@ -544,12 +544,10 @@ and footer sections. Bootstrap is an opensource and is created by twitter used b
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>{ block title }{ endblock }</title> 
-    <!-- Dynamic Title - Had to redact % from variable as github had issues with it on the readme -->
+    <!-- Fixes an IOS Bug -->
+    <title>{% block title %}{% endblock %}</title> <!-- Dynamic Title -->
     <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css')}}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.css">
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles.min.css')}}">
     <link rel="shortcut icon" href="{{ url_for('static', filename='singer.ico')}}"/>
 </head>
 
@@ -566,7 +564,7 @@ and footer sections. Bootstrap is an opensource and is created by twitter used b
             </div>
         </div>
     </nav>
-    { block content }{ endblock } <!-- Variable to input class main - Had to redact % from variable as github had issues with it on the readme -->
+    {% block content %}{% endblock %} <!-- Variable to input class main -->
     <footer class="page-footer dark"> <!-- Footer -->
         <div class="container">
             <div class="row">
@@ -607,8 +605,6 @@ and footer sections. Bootstrap is an opensource and is created by twitter used b
     </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
-    <script src="{{ url_for('static', filename='bootstrap.min.css')}}"></script>
 </body>
 
 </html>
