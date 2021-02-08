@@ -836,9 +836,17 @@ The admin page for image gallery. The ID's are not in order as you can delete im
 
 - [x] Databases for fast access and indexing. The website does use a database as shown in the technical solution.
 
+<p align="center">
+  <img src="https://nyanmark.github.io/nea/img/pycharm64_JyC0YKwSSa.png" width="550">
+</p>
+
 - [x] Cheap to Run. As shown above the website can be ran on a $2 VPS and most likely will work very well on something priced around $10. 
 
 - [x] Options for admin to set user limits for events. The admin can set a user limit when finalizing an event meaning there will be an x ammount of users accepted for an event. This is done through chosing users with the least performances.
+
+<p align="center">
+  <img src="https://nyanmark.github.io/nea/img/firefox_MmewKSCcPX.png" width="550">
+</p>
 
 ## Evaluation
 
