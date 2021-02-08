@@ -130,11 +130,16 @@ My decision to use bootstrap was partially inspired by many huge websites using 
 - Fast loading, Soon as bootstrap is so widely used. It is cached by many CDN's on the web such as cloudflare making it load very fast.
 - Mobile support, Importantly bootstrap is has mobile support allowing you to get very high page loading scores on mobile without a seperate mobile version.
   
-The great availiability of bootstrap [documentation](https://getbootstrap.com/docs/5.0/getting-started/introduction/), allowed me to style my website to my ideal needs. Additionally the availability of many premade objects for bootstrap allowed me to use these as a [base](https://github.com/bootstrapstudio/clean-sky-template/blob/master/template/index.html) for my website. In this case I had chosen a very old base therefore I had to transform it to support the new versions of bootstrap 5.0 rather than leaving it out dated. This allowed me to have good and functional styling for the normal web pages where I could pick and chose wether to import python variables from my code and adjust them as I wanted.
+The great availiability of bootstrap [documentation](https://getbootstrap.com/docs/4.5/getting-started/introduction/), allowed me to style my website to my ideal needs. Additionally the availability of many premade objects for bootstrap allowed me to use these as a [base](https://github.com/bootstrapstudio/clean-sky-template/blob/master/template/index.html) for my website. This allowed me to have good and functional styling for the normal web pages where I could pick and chose wether to import python variables from my code and adjust them as I wanted.
 
 **Database**
 
-My website database consists of 4 tables. The initial database for the website I designed was only the users table to hold the websites members. That consisted of essential collumns such as the 
+My website database consists of 3 tables. The initial database for the website I designed was only the users table to hold the websites members. That consisted of essential collumns such as the email, username and password however I had expanded my desin to do more and more.
+
+| Users Table | Data Type |
+| -------------| ------------- |
+| Content Cell | Content Cell  |
+| Content Cell | Content Cell  |
 
 **Backend**
 
@@ -538,9 +543,6 @@ if __name__ == '__main__':
 
 **Base HTML**
 ```html
-<!-- I wrote my website with the help of Boostrap CSS and JQuery JS, This has allowed me to save time whilst making
-my website efficients and mobile supported. The CSS and JavaScript is imported in the base HTML files in header
-and footer sections. Bootstrap is an opensource and is created by twitter used by huge sites such as walmart and nba -->
 <html lang="html">
 <head>
     <meta charset="utf-8">
@@ -548,9 +550,9 @@ and footer sections. Bootstrap is an opensource and is created by twitter used b
     <!-- Fixes an IOS Bug -->
     <title>{ block title }{ endblock }</title> <!-- Dynamic Title -->
     <!-- Had to redact % from variable as github had issues with it on the readme -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{ url_for('static', filename='bootstrap.min.css')}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css">
-    <link rel="shortcut icon" href="{{ url_for('static', filename='singer.ico')}}"/>
+    <link rel="shortcut icon" href="{ url_for('static', filename='singer.ico')}"/>
 </head>
 
 <body>
@@ -607,7 +609,7 @@ and footer sections. Bootstrap is an opensource and is created by twitter used b
         </div>
     </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta1/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
 ```
@@ -848,8 +850,15 @@ The admin page for image gallery. The IDs are not in order as you can delete ima
 
 ## Evaluation
 
-#### Objectives Met
+One of the criteria through which I will be evaluating the success of my website is whether the objectives were met? Overall I believe the objectives were met for my project. Throughout my testing I've encoutered that most of the websites objectives have indeed been met however, it is not the full picture. For example some objectives even though met I believe are not fully at their ideal stage. To beging with the option for administrator to set event limits is not fully fledged as quoted by my client "it seems to be basic" which I can agree with and in future endevaours I would like to alter aspects to include an option to set specific sizes for the ammounts of specific voice types and have an easy print out for the admin as well as the users. Currently the admin would have to fetch the text file from the server with the list of users. Another response I had gotten from my client is even though the event has a date there is a lack of time and place for the event which is a shortcoming I had completely overlooked. This means there would be a need to add two additional collumns to the events database to inclode those.
 
-One of the criteria through which I will be evaluating the success of my website is whether the objectives were met? Overall I believe the objectives were met for my project. Throughout my testing I've encoutered that most of the websites objectives have indeed been met however, it is not the full picture. For example some objectives even though met I believe are not fully at their ideal stage. To beging with the images 
+Other aspects of my site such as functionality have been working well. This was affirmed to me by my client however he noted there could be an extra feature for a password reset as that would save the administrator a lot of time allowing users to reset passwords. I had personally chosen to ommit this feature at the time of coding as it would require a large amount of work to implement a properly working mailing system with proper email templates. However, this could have been something I had focused more on rather than focusing on the gallery which my client found to be a great feature however, lacking options to upload image rather than putting a URL instead.
+
+Finally, The site is "clean and modern" as stated by my client. This was ideally what I was aiming for, something users can see as professional, clean and easy to use which I believe has been achieved through my use of bootstrap and the many resources available for it. Additionally the mobile support is exceptional due to the steps taken by the bootstrap team to do so by no means am I trying to take credit however, in evaluation I believe it was a great choice to use bootstrap as a web framwork for my website.
+
+Overall, I am very happy with my website and the real main aspect is the python backend code, which achieves many things that I wanted it to achieve and without it, all those web pages would be static and boring however, python has allowed me to make the website dynamic with logic adding features such as logins, events and image gallerys which otherwise would have been impossible. Another thing it has allowed me to do is use template for admin and normal areas of the site allowing me to bypass the header and footer issue plaguing many sites as stated by my client through editing just a couple files. Therefore, I believe this project has been a success as a proof of concept for easy to use modern choir websites and with the right amount of time the python code can be adapted to have more pages and features.
+
+I believe, I have been able to achieve much more through using python in this project rather than alternatives such as PHP therefore, it has been the right choice to do so as overal there aren't many shortcomings to using python for project such as this rather than having to adapt web pages for this style of environment.
+
 
 
