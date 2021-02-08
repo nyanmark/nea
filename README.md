@@ -545,7 +545,8 @@ and footer sections. Bootstrap is an opensource and is created by twitter used b
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <!-- Fixes an IOS Bug -->
-    <title>{% block title %}{% endblock %}</title> <!-- Dynamic Title -->
+    <title>{ block title }{ endblock }</title> <!-- Dynamic Title -->
+    <!-- Had to redact % from variable as github had issues with it on the readme -->
     <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css')}}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css">
     <link rel="shortcut icon" href="{{ url_for('static', filename='singer.ico')}}"/>
@@ -564,7 +565,8 @@ and footer sections. Bootstrap is an opensource and is created by twitter used b
             </div>
         </div>
     </nav>
-    {% block content %}{% endblock %} <!-- Variable to input class main -->
+    { block content }{ endblock } <!-- Variable to input class main -->
+    <!-- Had to redact % from variable as github had issues with it on the readme -->
     <footer class="page-footer dark"> <!-- Footer -->
         <div class="container">
             <div class="row">
