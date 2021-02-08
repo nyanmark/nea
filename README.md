@@ -172,7 +172,9 @@ Another feature I had to build on top of this is when a choir Admin decides to f
 
 **Backend**
 
-Python Flask backend.
+Python Flask backend. This will be the most complicated and feature rich part of the code. As a strarted I will have to figure out what imports I would like for my project. I had decided on using Flask for my web and FlaskSQLAlchemy for the datbases attached to the website. Therefore I will be importing those two packages. Additionally for managing dates withing python I will have to import datetime from timedelta this is to add support for the time datatype when using MySQL with the website. Finally I would have to import os which allows python to interface with the operating system. This is the feature which allows me to open, edit and create text files for each event that is going on. Overall, this project is light on imports however, it is still light weight and does not over do by importing every package in the python library.
+
+Another thing I have to consider is definining my app. The app is the Flask website, additionally I have to define the database connection string for SQLite for development and MySQL for the actual website. Other features I would have to include is the encryption key for the web sessions to keep the secure and the permanent session life time, to tell my site how long to hold these sessions in cache. Another feature that would need to be defined here is the admin user creation as without a default adming user "admin@localhost" pass "admin" there would be no way for the intended user of the website to log in manage events, the gallery and other users therefore this is a very important and essential feature. Also there would have to be an implemented check wether an admin user already excists i.e. has the database already been populated. So there are no errors caused in the code.
 
 ## Technical Solution 
 
