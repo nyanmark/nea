@@ -178,6 +178,44 @@ Another thing I have to consider is definining my app. The app is the Flask webs
 
 Just before defining the app.routes or the web pages for Flask. I would have to create the databases aformentioned previously. The web pages I had planned fro my website. Is having an index, register, login, gallery, events and members page in addition to this there would have to be an admin area to manage all of those comprised of the index for admin sub directory, the manage events, manage users and manage gallery pages.
 
+One of the most challenging aspecs of my code would be the admin events. Therefore, I had to plan out procedually how it would work. The chart below is the structure I had invisioned it to be:
+
+- User Accesses Page
+  - Is user logged in ?
+    - Yes
+      - Is User Admin ?
+        - Yes
+          - Allow user through
+            -Is request Get or Post
+              - Get
+                - Just display web page
+              - Post
+                - Pull variables from the form
+                - What button is user using for post
+                  - Add Event
+                    - Create a database entry and pull the ID to create a txt file
+                  - Edit Event
+                    - Locate database entry and edit if excist or put error if not
+                  - Delete Event
+                    - Delete database entry for such id
+                  - Finalize Event (logic)
+                    - Alter database table and mark finalised
+                    - Create an ID_final txt file
+                      - Is users in eventid.txt less than event limit from form
+                        - Yes
+                          - Move users to eventid_final.txt and finalize event
+                        - No
+                          - Put users in temporary array
+                          - Sort by number of events participated
+                          - Delete users with most events until len array = event limit
+                          - Move users to eventid_final.txt
+                          - Finalize event.
+        - No
+          - Send to members Area
+    - No
+      - Send to Log in
+
+
 ## Technical Solution 
 
 If you would like to look at the files rather than screenshots they are located at [GitHub](https://github.com/nyanmark/nea). Files to note for my project "main.py" and the contents of the "templates" folder. Everything else may be ignored.
