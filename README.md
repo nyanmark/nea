@@ -130,7 +130,7 @@ My decision to use bootstrap was partially inspired by many huge websites using 
 - Fast loading, Soon as bootstrap is so widely used. It is cached by many CDN's on the web such as cloudflare making it load very fast.
 - Mobile support, Importantly bootstrap is has mobile support allowing you to get very high page loading scores on mobile without a seperate mobile version.
   
-The great [documentation](https://getbootstrap.com/docs/4.5/getting-started/introduction/). Allowed me to pick and chose which parts and what structures I wanted within my website code, and then alter those structure to my needs.
+The great [documentation](https://getbootstrap.com/docs/5.0/getting-started/introduction/). Allowed me to pick and chose which parts and what structures I wanted within my website code, and then alter those structure to my needs.
 
 **Database**
 
@@ -607,7 +607,7 @@ and footer sections. Bootstrap is an opensource and is created by twitter used b
         </div>
     </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta1/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
 ```
