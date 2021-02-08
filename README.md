@@ -118,9 +118,9 @@ I was thinking what the ideal look would be for the web front. It needed to be s
   <img src="https://nyanmark.github.io/nea/img/design_jqMulpKc4r.png" width="550">
 </p>
 
-Another question which I had is how to make the website fast response and good looking. I had to do this with the consideration of the tight time constraints I had for this project. Therefore when I found out there was a web frame work known as bootstrap which would take away most of the work of writing CSS and JS allowing me to focus on simple yet effective Python and HTML I had decided to use it. You can find the source located [Here](https://github.com/twbs/bootstrap) on GitHub.
+Another question which I had is how to make the website fast response and good-looking. I had to do this with the consideration of the tight time constraints I had for this project. Therefore, when I found out there was a web framework known as bootstrap which would take away most of the work of writing CSS and JS allowing me to focus on the python end of the project I had decided to use it. You can find the source located [Here](https://github.com/twbs/bootstrap) on GitHub.
 
-This means that whilst I focused on writing HTML bulk of the work involved with writing CSS styling and Javascript was taken off my hands. Additionally using Flask has allowed me to create templates for a footer, header and navibar for the Member and Admin areas meaning each pages individual file only contained content unique to it. Using python has also allowed me to set variables and logic within the HTML code making me think of the most efficient decisions wether to do logic within python and then import the variable or do the code within the HTML. I have chosen to place the most important URL's within the header whilst keeping other essential however lesser important URL's in the footer. 
+This means that whilst I focused on writing HTML bulk of the work involved with writing CSS styling and Javascript was taken off my hands. Additionally, using Flask has allowed me to create templates for a footer, header and navibar for the Member and Admin areas meaning each pages individual file only contained content unique to it. Using python has also allowed me to set variables and logic within the HTML code making me think of the most efficient decisions wether to do logic within python and then import the variable or do the code within the HTML. I have chosen to place the most important URL's within the header whilst keeping other essential however lesser important URL's in the footer. 
 
 My decision to use bootstrap was partially inspired by many huge websites using it [including](https://expo.getbootstrap.com/) and many others such as the Target and NBA website. What striked me more is that nearly 1/4 of the top 1 million websites are made with the help of bootstrap. Additionally through my intended usage of bootrap it lead me to explore why was it so prevalent in the top websites today. This lead me to come up with a few reasons listed below:
 
@@ -783,13 +783,13 @@ Now when you load it in your browser it has the lock showing that data is now be
 
 ## Testing
 
-- [x] A system which people with a lack of technical knowledge can use. Throughout my testing and my questionare regarding my finished product I believe many would find it easy to use. To verify this further I had my grand mother try using and accessing the site. With little technical knowledge she was abe to get around it. I believe I own this success to the very simple and clean design where the most essential buttoms are right at the top of the page and everything is marked in a nice and clear text.
+- [x] A system which people with a lack of technical knowledge can use. Throughout my testing and my questionnaire regarding my finished product I believe many would find it easy to use. To verify this further I had my grand mother try using and accessing the site. With little technical knowledge she was abe to get around it. I believe I own this success to the very simple and clean design where the most essential buttoms are right at the top of the page and everything is marked in a nice and clear text.
 
 <p align="center">
   <img src="https://nyanmark.github.io/nea/img/chrome_fzcnnqCEh7.png" width="550">
 </p>
 
-These are some responses I had gotten from some friends and family for my website. Overall I believe they found it easy to use. Additionally I allowed comments so others can express a deeper opinion and this is what I got in response.
+These are some responses I had gotten from some friends and family for my website. Overall I believe they found it easy to use. Additionally, I allowed comments so others can express a deeper opinion and this is what I got in response.
 
 
 <p align="center">
@@ -808,7 +808,7 @@ These are some responses I had gotten from some friends and family for my websit
   <img src="https://nyanmark.github.io/nea/img/firefox_FTjrXTfPp0.png" width="550">
 </p>
 
-- [x] Page listing all the events with a sign up. My website does include this page so I believe this objective has been met.
+- [x] Page listing all the events with a sign up. My website does include this page, so I believe this objective has been met.
 
 <p align="center">
   <img src="https://nyanmark.github.io/nea/img/firefox_SHRuq7B4Bc.png" width="550">
@@ -826,7 +826,7 @@ These are some responses I had gotten from some friends and family for my websit
   <img src="https://nyanmark.github.io/nea/img/firefox_93QkFQjQRs.jpg" width="550">
 </p>    
 
-The admin page for image gallery. The ID's are not in order as you can delete images from the gallery when you want and you can add images to the gallery. Additionally you can edit images in the gallery and the variables in the python Flask code will adjust the HTML code to scale up or down for more or less images.  Currently there is an issue due to the Home Page and the Gallery Main image being loaded from an array rather than a database causing the image not to always update. Therefore I plan to alter this code to use a text file or another database in the future.
+The admin page for image gallery. The IDs are not in order as you can delete images from the gallery when you want, and you can add images to the gallery. Additionally, you can edit images in the gallery, and the variables in the python Flask code will adjust the HTML code to scale up or down for more or less images.  Currently there is an issue due to the Home Page and the Gallery Main image being loaded from an array rather than a database causing the image not to always update. Therefore I plan to alter this code to use a text file or another database in the future.
 
 <p align="center">
   <img src="https://nyanmark.github.io/nea/img/firefox_ahHeW9Nuuk.png" width="550">
@@ -840,9 +840,9 @@ The admin page for image gallery. The ID's are not in order as you can delete im
   <img src="https://nyanmark.github.io/nea/img/pycharm64_JyC0YKwSSa.png" width="550">
 </p>
 
-- [x] Cheap to Run. As shown above the website can be ran on a $2 VPS and most likely will work very well on something priced around $10. 
+- [x] Cheap to Run. As shown above the website can be run on a $2 VPS, and most likely will work very well on something priced around $10. 
 
-- [x] Options for admin to set user limits for events. The admin can set a user limit when finalizing an event meaning there will be an x ammount of users accepted for an event. This is done through chosing users with the least performances.
+- [x] Options for admin to set user limits for events. The admin can set a user limit when finalizing an event meaning there will be an x amount of users accepted for an event. This is done through choosing users with the least performances.
 
 <p align="center">
   <img src="https://nyanmark.github.io/nea/img/firefox_MmewKSCcPX.png" width="550">
@@ -850,6 +850,8 @@ The admin page for image gallery. The ID's are not in order as you can delete im
 
 ## Evaluation
 
+#### Objectives Met
 
+One of the criteria through which I will be evaluating the success of my website is whether the objectives were met? Overall I believe the objectives were met for my project. Throughout my testing I've encoutered that most of the websites objectives have indeed been met however, it is not the full picture. For example some objectives even though met I believe are not fully at their ideal stage. To beging with the images 
 
 
