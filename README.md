@@ -256,6 +256,8 @@ I believe when converted to python there may be short comings and additions to t
     - No
       - Send to Log in
 
+In addition to those admin pages I had to consider how I would go around the other pages and what variables would be used to furfil my code. For example how would user registration and login work. I believed the concept for registration would be similar to the concept of adding an event or an image to the gallery in this case a new entry would be added to the database with the appropriate users, with the email being used as the primary key as I would like to keep user emails unique. In addition to this I would have to check whether the email already excists not to creat errors. I would do this through querying the database for said registration email and then allowing or not allowing the user to register his account based on that.
+
 ## Technical Solution 
 
 If you would like to look at the files rather than screenshots they are located at [GitHub](https://github.com/nyanmark/nea). Files to note for my project "main.py" and the contents of the "templates" folder. Everything else may be ignored.
