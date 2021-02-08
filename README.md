@@ -795,11 +795,11 @@ Now when you load it in your browser it has the lock showing that data is now be
 
 - [x] Image gallery to show off past events
     
-- [x] Website hosted on the web accessible to anyone. This is also a complete objective as anyone in the world can access my site [at](https://mlweb.me). Unfortunately the current server it is running on is not so powerful meaning there is a arbitrary user limitation.
+- [x] Website hosted on the web accessible to anyone. This is also a complete objective as anyone in the world can access my site [at](https://mlweb.me). Unfortunately the current server it is running on is not so powerful meaning there is a arbitrary user limitation. However, I would like to note that at this current moment the code would need some adjustments to run optimally on a linux webserver. This is because I was programing in a windows environment.
 
 - [x] Databases for fast access and indexing. The website does use a database as shown in the technical solution.
 
-- [x] Cheap to Run. As shown above the website can be ran on a $2 VPS and most likely will work very well on something priced around $10.
+- [x] Cheap to Run. As shown above the website can be ran on a $2 VPS and most likely will work very well on something priced around $10. 
 
 - [x] Options for admin to set user limits for events. The admin can set a user limit when finalizing an event meaning there will be an x ammount of users accepted for an event. This is done through chosing users with the least performances.
 
