@@ -215,6 +215,46 @@ One of the most challenging aspecs of my code would be the admin events. Therefo
     - No
       - Send to Log in
 
+I believe when converted to python there may be short comings and additions to this design I would have to make however, I believe that overall this will be a good template to code the logic for the python back end for event creation, editing, deletion and finalization. Additionally to this I had to design the login for the gallery allowing the admin user to add, remove and edit images. This would still be complicated to code at a whim therefore I had to desing some sort of structure for this as well. The design for the admin gallery page is shown below:
+
+
+- User Accesses Page
+  - Is user logged in ?
+    - Yes
+      - Is User Admin ?
+        - Yes
+          -Is request Get or Post
+            - Get
+              - Just display web page
+            - Post
+              - Pull variables from the form
+              - Is image ID reserved image such as index image or gallery image ?
+                - Yes
+                  - What button is user using for post ?
+                    - Add or Delete
+                      - Tell user impossible
+                    - Edit
+                      - Update image URL
+                - No
+                  - What button is user using for post ?
+                      - Add
+                        - Create new database entry using variables input from user
+                      - Edit
+                        - Is image ID in database
+                          - No
+                            - Image not found try again
+                          - Yes
+                            - Update database record
+                      - Delete
+                        - Is image ID in database
+                          - No
+                            - Image not found try again
+                          - Yes
+                            - Remove database record
+        - No
+          - Send to members Area
+    - No
+      - Send to Log in
 
 ## Technical Solution 
 
