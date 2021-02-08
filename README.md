@@ -798,13 +798,39 @@ These are some responses I had gotten from some friends and family for my websit
 
 - [x] Security users must log in to use the website. The website does have a secure login page which requires the users email and password and whenever the user tries to access the members area he is send back to the login page to make sure he is signed in.
     
+<p align="center">
+  <img src="https://nyanmark.github.io/nea/img/firefox_y5i2OvyDmV.png" width="550">
+</p>
+
 - [x] A intuative admin panel. I believe the admin panel is easy for anyone to use with large clear buttons indicating what is where, the forms are large again with clear buttons and the tables are labeled properly on each page.
-    
+
+<p align="center">
+  <img src="https://nyanmark.github.io/nea/img/firefox_FTjrXTfPp0.png" width="550">
+</p>
+
 - [x] Page listing all the events with a sign up. My website does include this page so I believe this objective has been met.
+
+<p align="center">
+  <img src="https://nyanmark.github.io/nea/img/firefox_SHRuq7B4Bc.png" width="550">
+</p>
 
 - [x] Events entered and accepted displayed in member page. My website also had this display in the members page therefore I believe this objective has been met.
 
-- [x] Image gallery to show off past events
+<p align="center">
+  <img src="https://nyanmark.github.io/nea/img/firefox_EAdLjaa2pR.png" width="550">
+</p>
+
+- [x] Image gallery to show off past events. There is a dynamic image gallery on the website.
+    
+<p align="center">
+  <img src="https://nyanmark.github.io/nea/img/firefox_93QkFQjQRs.jpg" width="550">
+</p>    
+
+The admin page for image gallery. The ID's are not in order as you can delete images from the gallery when you want and you can add images to the gallery. Additionally you can edit images in the gallery and the variables in the python Flask code will adjust the HTML code to scale up or down for more or less images.  Currently there is an issue due to the Home Page and the Gallery Main image being loaded from an array rather than a database causing the image not to always update. Therefore I plan to alter this code to use a text file or another database in the future.
+
+<p align="center">
+  <img src="https://nyanmark.github.io/nea/img/firefox_ahHeW9Nuuk.png" width="550">
+</p>
     
 - [x] Website hosted on the web accessible to anyone. This is also a complete objective as anyone in the world can access my site [at](https://mlweb.me). Unfortunately the current server it is running on is not so powerful meaning there is a arbitrary user limitation. However, I would like to note that at this current moment the code would need some adjustments to run optimally on a linux webserver. This is because I was programing in a windows environment.
 
