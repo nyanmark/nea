@@ -130,7 +130,7 @@ My decision to use bootstrap was partially inspired by many huge websites using 
 - Fast loading, Soon as bootstrap is so widely used. It is cached by many CDN's on the web such as cloudflare making it load very fast.
 - Mobile support, Importantly bootstrap is has mobile support allowing you to get very high page loading scores on mobile without a seperate mobile version.
   
-The great availiability of bootstrap [documentation](https://getbootstrap.com/docs/4.5/getting-started/introduction/), allowed me to style my website to my ideal needs. Additionally the availability of many premade objects for bootstrap allowed me to use these as a [base](https://github.com/bootstrapstudio/clean-sky-template/blob/master/template/index.html) for my website. This allowed me to have good and functional styling for the normal web pages where I could pick and chose wether to import python variables from my code and adjust them as I wanted.
+The great availiability of bootstrap [documentation](https://getbootstrap.com/docs/4.5/getting-started/introduction/), allowed me to style my website to my ideal needs. Additionally the availability of many premade objects for bootstrap allowed me to use this as a [base](https://github.com/bootstrapstudio/clean-sky-template/blob/master/template/index.html) for my website. This allowed me to have good and functional styling for the normal web pages where I could pick and chose wether to import python variables from my code and adjust them as I wanted.
 
 **Database**
 
@@ -138,8 +138,14 @@ My website database consists of 3 tables. The initial database for the website I
 
 | Users Table | Data Type |
 | -------------| ------------- |
-| Content Cell | Content Cell  |
-| Content Cell | Content Cell  |
+| Name | String  |
+| Email | String, PrimaryKey  |
+| Password | String  |
+| Voice | String  |
+| is_admin | Boolean  |
+| num_events | Intiger  |
+
+These were my desired data types for the users collumn they had allowed 
 
 **Backend**
 
