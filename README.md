@@ -176,6 +176,8 @@ Python Flask backend. This will be the most complicated and feature rich part of
 
 Another thing I have to consider is definining my app. The app is the Flask website, additionally I have to define the database connection string for SQLite for development and MySQL for the actual website. Other features I would have to include is the encryption key for the web sessions to keep the secure and the permanent session life time, to tell my site how long to hold these sessions in cache. Another feature that would need to be defined here is the admin user creation as without a default adming user "admin@localhost" pass "admin" there would be no way for the intended user of the website to log in manage events, the gallery and other users therefore this is a very important and essential feature. Also there would have to be an implemented check wether an admin user already excists i.e. has the database already been populated. So there are no errors caused in the code.
 
+Just before defining the app.routes or the web pages for Flask. I would have to create the databases aformentioned previously. The web pages I had planned fro my website. Is having an index, register, login, gallery, events and members page in addition to this there would have to be an admin area to manage all of those comprised of the index for admin sub directory, the manage events, manage users and manage gallery pages.
+
 ## Technical Solution 
 
 If you would like to look at the files rather than screenshots they are located at [GitHub](https://github.com/nyanmark/nea). Files to note for my project "main.py" and the contents of the "templates" folder. Everything else may be ignored.
