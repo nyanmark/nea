@@ -154,6 +154,18 @@ These were my desired data types for the users collumn they will allow me to cre
 
 This was a very basic table to allow the storage of images and their respective ids for purposes such as editing and allowing the image carousel to work properly by giving it the number of images through the use of the ID + 1, the reason a +1 is added to the id is because of a persistent base image for the gallery and the home page which will be loaded from a variable in my code for the sake of simplicity.
 
+| Events Table | Data Type |
+| -------------  | ------------- |
+| ID | Int, PrimaryKey  |
+| Title | String |
+| Description | String  |
+| Date | String (limitation of SQLite3, DATE can be used with MySQL) |
+| Creator | String  |
+| IMG_URL | String  |
+| Finalized | Boolean  |
+
+Finally the most important and arguably most complicated table is the events table for the website this had to consist of many features again just like the gallery the ID is used to order the table properly and efficients on the events page. The date allows the adming to show case when the event is occuring and when the choir members should prepare for it (in evaluation, I believe it would have been good to add a location and time to the events database) additionally, there is the creator collumn to identify what choir Admin has posted the event and the Image URL for the event. Last but not least the finalized feature denotes whether the event has been finalized by the choir leader meaning no more members can join the event and all those who are going to be in it have been written to file.
+
 **Backend**
 
 Python Flask backend.
