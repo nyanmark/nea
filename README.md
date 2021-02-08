@@ -785,6 +785,17 @@ Now when you load it in your browser it has the lock showing that data is now be
 
 - [x] A system which people with a lack of technical knowledge can use. Throughout my testing and my questionare regarding my finished product I believe many would find it easy to use. To verify this further I had my grand mother try using and accessing the site. With little technical knowledge she was abe to get around it. I believe I own this success to the very simple and clean design where the most essential buttoms are right at the top of the page and everything is marked in a nice and clear text.
 
+<p align="center">
+  <img src="https://nyanmark.github.io/nea/img/chrome_fzcnnqCEh7.png" width="550">
+</p>
+
+These are some responses I had gotten from some friends and family for my website. Overall I believe they found it easy to use. Additionally I allowed comments so others can express a deeper opinion and this is what I got in response.
+
+
+<p align="center">
+  <img src="https://nyanmark.github.io/nea/img/chrome_xoyaKb8B5d.png" width="550">
+</p>
+
 - [x] Security users must log in to use the website. The website does have a secure login page which requires the users email and password and whenever the user tries to access the members area he is send back to the login page to make sure he is signed in.
     
 - [x] A intuative admin panel. I believe the admin panel is easy for anyone to use with large clear buttons indicating what is where, the forms are large again with clear buttons and the tables are labeled properly on each page.
