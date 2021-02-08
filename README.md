@@ -536,7 +536,6 @@ if __name__ == '__main__':
 
 **Base HTML**
 ```html
-<!DOCTYPE html>
 <!-- I wrote my website with the help of Boostrap CSS and JQuery JS, This has allowed me to save time whilst making
 my website efficients and mobile supported. The CSS and JavaScript is imported in the base HTML files in header
 and footer sections. Bootstrap is an opensource and is created by twitter used by huge sites such as walmart and nba -->
@@ -608,7 +607,6 @@ and footer sections. Bootstrap is an opensource and is created by twitter used b
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/js/bootstrap.bundle.min.js"></script>
 </body>
-
 </html>
 ```
 
