@@ -137,7 +137,7 @@ The great availiability of bootstrap [documentation](https://getbootstrap.com/do
 My website database consists of 3 tables. The initial database for the website I designed was only the users table to hold the websites members. That consisted of essential collumns such as the email, username and password however I had expanded my desin to do more and more.
 
 | Users Table | Data Type |
-| -------------| ------------- |
+| -------------  | ------------- |
 | Name | String  |
 | Email | String, PrimaryKey  |
 | Password | String  |
@@ -145,7 +145,14 @@ My website database consists of 3 tables. The initial database for the website I
 | is_admin | Boolean  |
 | num_events | Intiger  |
 
-These were my desired data types for the users collumn they had allowed 
+These were my desired data types for the users collumn they will allow me to create a secured admin area and record the number of events the user has participated in therefore when the program is chosing the final user it knows how to do so by ordering them from most to least events participated in. Another database my project had is a simple database for the image gallery.
+
+| Gallery Table | Data Type |
+| -------------  | ------------- |
+| ID | Int, PrimaryKey  |
+| URL | String  |
+
+This was a very basic table to allow the storage of images and their respective ids for purposes such as editing and allowing the image carousel to work properly by giving it the number of images through the use of the ID + 1, the reason a +1 is added to the id is because of a persistent base image for the gallery and the home page which will be loaded from a variable in my code for the sake of simplicity.
 
 **Backend**
 
